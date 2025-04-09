@@ -1,0 +1,16 @@
+GUI
+- 그래픽 기반 인터페이스
+CLI
+- 텍스트 기반 인터페이스
+
+NumPy 
+수치 데이터를 다루는 파이썬 패키지 
+ex)np.array(), ...
+
+Pandas 
+파이썬 데이터 처리를 위한 라이브러리 
+ex)pd.DataFrame(), ...
+
+Matplotlib 
+데이터를 차트나 플롯으로 시작화하는 패키지 
+ex) plt.show(), ...
