@@ -10,7 +10,7 @@ services:
       - '8888:8888' # 기본 주피터랩 웹포트 8888
       - '22:22' # ssh 기본 포트
     volumes:
-      - D:\kys\code\Note_s1:/home/pkdata/data # 외부저장 공간과 컨테이너 내부 저장공간 연결 설정
+      - D:\kys\code\:/home/pkdata/data # 외부저장 공간과 컨테이너 내부 저장공간 연결 설정
     networks:
       - db_net # 내부와 통신이 가능하도록 db_net의 이름으로 도커네트워크 설정
 
