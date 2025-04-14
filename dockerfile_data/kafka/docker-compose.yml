@@ -4,6 +4,8 @@ services:
     container_name: zookeeper
     ports:
       - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181      
   kafka:
     image: confluentinc/cp-kafka:7.6.0
     container_name: kafka
