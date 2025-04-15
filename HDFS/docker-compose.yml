@@ -1,0 +1,87 @@
+services:
+  namenode:
+    image: ys-hdfs:1.0
+    container_name: namenode
+    hostname: namenode
+    command: bash -c "service ssh start && chown -R hadoop:hadoop /data/hadoop && chmod -R 777 /data/hadoop && bash"
+    stdin_open: true
+    tty: true
+    networks:
+      - mynet
+    ports:
+      - "9870:9870" # NameNode Web UI
+      - "9000:9000" # HDFS RPC
+      - "7077:7077" # Spark Master Port
+      - "8080:8080" # Spark Web UI
+      - "8088:8088" # Yarn Server
+      - "8025:8025" # ResourceManager ResourceTracker
+      - "8030-8033:8030-8033" # ResourceManager Scheduler # 포트의 범위설정
+      - "8035:8035" # ResourceManager Address
+      - "8040:8040" # YARN NodeManager
+      - "4040-4045:4040-4045" # Spark UI 포트 # 포트의 범위설정
+      - "18080:18080" # Spark History Server 포트
+      - "2220:22"
+    volumes:
+      - D:/dockerdata/namenode:/data/hadoop/dfs/name
+      - D:/dockerdata/spark/conf:/spark/conf
+      
+  datanode1:
+    image: ys-hdfs:1.0
+    container_name: datanode1
+    hostname: datanode1
+    command: bash -c "service ssh start && chown -R hadoop:hadoop /data/hadoop && chmod -R 777 /data/hadoop && bash"
+    stdin_open: true
+    tty: true
+    networks:
+      - mynet
+    ports:
+      - "2221:22"
+      - "9864:9864" # DataNode Web UI
+      - "8081:8081" # Spark Worker Web UI
+      - "65001:65001"  # Worker 통신용
+      - "8042:8042" # NodeManager Web UI 포트
+    volumes:
+      - D:/dockerdata/datanode1:/data/hadoop/dfs/data
+      - D:/dockerdata/spark1/conf:/spark/conf
+
+  datanode2:
+    image: ys-hdfs:1.0
+    container_name: datanode2
+    hostname: datanode2
+    command: bash -c "service ssh start && chown -R hadoop:hadoop /data/hadoop && chmod -R 777 /data/hadoop && bash"
+    stdin_open: true
+    tty: true
+    networks:
+      - mynet
+    ports:
+      - "2222:22"
+      - "9865:9864" # DataNode Web UI
+      - "8082:8081" # Spark Worker Web UI
+      - "65002:65001"  # Worker 통신용
+      - "8043:8042" # NodeManager Web UI 포트
+    volumes:
+      - D:/dockerdata/datanode2:/data/hadoop/dfs/data
+      - D:/dockerdata/spark2/conf:/spark/conf
+
+  datanode3:
+    image: ys-hdfs:1.0
+    container_name: datanode3
+    hostname: datanode3
+    command: bash -c "service ssh start && chown -R hadoop:hadoop /data/hadoop && chmod -R 777 /data/hadoop && bash"
+    stdin_open: true
+    tty: true
+    networks:
+      - mynet
+    ports:
+      - "2223:22"
+      - "9866:9864" # DataNode Web UI
+      - "8083:8081" # Spark Worker Web UI
+      - "65003:65001"  # Worker 통신용
+      - "8044:8042" # NodeManager Web UI 포트
+    volumes:
+      - D:/dockerdata/datanode3:/data/hadoop/dfs/data
+      - D:/dockerdata/spark3/conf:/spark/conf
+
+networks:
+  mynet:
+    driver: bridge
