@@ -1,0 +1,6 @@
+p156 한글 폰트설치
+
+1. sudo apt update
+2. sudo apt install -y fonts-nanum
+3. sudo rm ~fc-cache -fv
+4. rm ~/.cache/matplotlib -rf

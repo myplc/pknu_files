@@ -1,0 +1,23 @@
+태그 
+<시작> </시작>
+<끝> </끝>
+
+<a href=""></a>
+<div  속성은 여기에></div>
+<span     ></span>
+<kys     ></kys>
+
+<br />
+<img     />
+<input             />
+
+=================
+확장설치
+Prettier - code formatter - 다른언어가능
+Live Server (중요) - html
+HTML CSS Support - html
+Materal icon theme - 그외
+Color highlight - html, css
+Git Graph - git
+
+emmet

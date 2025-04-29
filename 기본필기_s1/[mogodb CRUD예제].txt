@@ -1,0 +1,12 @@
+DockerFile
+
+docker-compose
+Jupyterlab
+오라클DB
+mySQL
+mongoDB
+
+=====================================================
+
+mongodb 6.0 이상으로 5.x 대를 빨리 건너뜀
+6.0이상은 실행 쉘이 없기에 mongosh 를 설치해서 작동해야함

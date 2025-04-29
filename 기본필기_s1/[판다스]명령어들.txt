@@ -1,0 +1,13 @@
+.astype(float)
+.astype(int)
+.astype(str)
+
+.set_index('응답') # 컬럼 하나를 인덱스로 지정
+.reset_index() # 인덱스를 초기화
+
+# 데이터프레임 이어 붙이기
+pd.concat([df1, df3],axis=1) # axis=1 컬럼방향 , 기본은 행방향 axis=0
+
+.fillna(0) # 0으로 결측값을 채움
+.ffill()
+.bfill()

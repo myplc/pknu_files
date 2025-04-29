@@ -1,0 +1,1 @@
+docker run -itd --user root --name zep01 --hostname PKNU --network hdfs_mynet -p 28080:8080 -v /d/kys/code/dockerfile_data/zeppelin:/opt/zeppelin/notebook/data apache/zeppelin:0.12.0
