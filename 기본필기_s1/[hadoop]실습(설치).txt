@@ -1,0 +1,62 @@
+ssh 공개키 설정
+ssh-keygen -t rsa
+id_rsa  id_rsa.pub
+
+ssh-copy-id hadoop@namenode
+ssh-copy-id hadoop@datanode1
+ssh-copy-id hadoop@datanode2
+ssh-copy-id hadoop@datanode3
+
+nano .bashrc 맨 아래 추가
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export HADOOP_HOME=/home/hadoop/hadoop-3.4.1
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export PATH=$PATH:$JAVA_HOME:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+
+nano hadoop-env.sh 맨 아래 추가
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+수정할 파일들 목록
+hadoop@namenode:~/hadoop-3.4.1/etc/hadoop$ nano core-site.xml
+hadoop@namenode:~/hadoop-3.4.1/etc/hadoop$ nano hdfs-site.xml
+hadoop@namenode:~/hadoop-3.4.1/etc/hadoop$ nano mapred-site.xml
+hadoop@namenode:~/hadoop-3.4.1/etc/hadoop$ nano yarn-site.xml
+hadoop@namenode:~/hadoop-3.4.1/etc/hadoop$ nano workers
+
+[별도의 txt로 표시 ] [hadoop]실습(환경설정).txt
+
+
+
+VScode로 수정 후
+
+namenode에서
+각 데이터노드로 복사하기
+scp -r /home/hadoop/hadoop-3.4.1/etc/hadoop/* hadoop@datanode1:/home/hadoop/hadoop-3.4.1/etc/hadoop/
+scp -r /home/hadoop/hadoop-3.4.1/etc/hadoop/* hadoop@datanode2:/home/hadoop/hadoop-3.4.1/etc/hadoop/
+scp -r /home/hadoop/hadoop-3.4.1/etc/hadoop/* hadoop@datanode3:/home/hadoop/hadoop-3.4.1/etc/hadoop/
+
+각 노드에 폴더를 생성(도커이미지, 도커컴포즈로 생략가능)
+sudo mkdir -p /data/hadoop/tmp
+sudo mkdir -p /data/hadoop/dfs/name
+sudo mkdir -p /data/hadoop/dfs/data
+sudo chown -R hadoop:hadoop /data/hadoop
+
+처음으로 namenode 포맷
+hadoop namenode -format
+start-all.sh
+stop-all.sh
+
+hdfs dfs -mkdir -p /user/hadoop
+hdfs dfs -chmod 777 /user/hadoop
+
+localhost:9870 접속
+
+
+
+
+
+
+
+
+
+

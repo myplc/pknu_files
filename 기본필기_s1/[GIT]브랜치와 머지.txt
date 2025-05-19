@@ -1,0 +1,36 @@
+main -> 1)과거 -> 2)브랜치생성 -> main -> 병합
+
+프랜치삭제:git branch -d 이름
+프랜치삭제 강하게:git branch -D 이름
+
+1) 원하는 지점확인 : git log (해시값 확인)
+2) 과거 : git checkout a2d6d4986
+3) 확인: git branch  (브랜치 확인하기)
+4) 뉴 브랜치 생성 git checkout -b dev
+5) 메인이동 : git checkout main
+6) 병합 : git merge dev (dev를 가져와서 병합)
+7) 충돌해결: 파일에 가서 >>> HEAD 부분 해결
+8) 깃 커밋과 푸시
+9) 기존 브랜치 삭제 git branch -d dev
+10) 원격지 브랜치 삭제 git push origin --delete dev
+
+git log  
+git log --oneline
+git log --oneline --graph --all --decorate
+
+
+===============================
+
+
+1. git switch --detach 해시
+   (git checkout 해시)
+2. 확인: git branch
+3. git switch -c dev_kys
+4. git push -u origin dev_kys
+
+git branch -r (원격지까지)
+git fetch --all
+git pull --all
+
+
+ 

@@ -1,0 +1,24 @@
+cd hadoop-3.4.1/ 경로내
+C 업로드: hdfs dfs -put ./LICENSE.txt /user/hadoop/
+R 읽어오기: hdfs dfs -cat /user/hadoop/LICENSE.txt
+   다운로드: hdfs dfs -get 'hdhs파일명' '로컬파일명'   (그대로 하려면 온점하나)
+D 삭제: hdfs dfs -rm 'hdfs 파일명'
+
+   폴더생성: hdfs dfs -mkdir -p /user/mydata/
+   권한부여: hdfs dfs -chmod 777 /user/mydata
+
+HDFS (Hadoop Distributed File System)에서는 파일의 수정이 원칙적으로 제한됩니다. HDFS는 고속 데이터 읽기/쓰기 성능과 데이터 복제 및 분산을 목표로 설계되었으며, 파일은 기본적으로 "write-once, read-many-times" 모델을 따릅니다. 즉, 작성된 파일은 수정될 수 없으며, 파일을 수정하려면 새로운 파일을 생성해야 합니다.
+
+오픈소스링크(워드카운트)
+https://github.com/apache/hadoop/blob/rel/release-3.4.1/hadoop-mapreduce-project/hadoop-mapreduce-examples/src/main/java/org/apache/hadoop/examples/WordCount.java
+=====================================================
+# 워드카운트, 맵리듀스 예제
+hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.4.1.jar
+           wordcount /user/hadoop/LICENSE.txt /user/wordcount-output
+
+# PI 예제
+hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.4.1.jar pi 5 1000
+
+# Grep (패턴검색)
+hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.4.1.jar 
+      grep /user/hadoop/LICENSE.txt /user/hadoop/grep-output "Apache"

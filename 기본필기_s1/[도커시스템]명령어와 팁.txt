@@ -1,0 +1,14 @@
+도커시스템 => 이미지(읽기전용)  =>    [컨테이너(수정가능한것)] X 
+
+이미지 상태확인
+docker ps -a
+컨테이너 상태확인
+docker container ps -a
+
+이미지 확인
+docker images
+이미지 삭제
+docker rmi 72297848456d
+
+컨테이너 생성 명령어
+docker run -itd -p 22:22 --name ubuntu01 --hostname PKNU -v D:\\kys\\code:/home/data ubuntu:22.04

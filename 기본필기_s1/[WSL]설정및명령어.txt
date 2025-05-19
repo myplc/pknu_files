@@ -1,0 +1,101 @@
+[WSL] 관리자권한 필요
+(업데이트설치)
+wsl.exe --install
+
+(확인시)
+wsl -l -v
+
+(삭제시)
+wsl --unregister Ubuntu-22.04
+wsl --shutdown
+=================
+[Ubuntu]
+/home/ys
+
+1) sudo apt update
+2) sudo apt upgrade -y
+3) python3 -V
+==================
+[명령어]
+Ctrl + C : 캔슬
+pwd : 현재경로확인  ( ~ 표시된 경로는 기본 사용자 경로)
+su : 루트권한
+sudo passwd : 비밀번호 세팅
+exit : 빠져나가기
+ls -al : 리스트 상세
+lshw : 하드웨어 정보
+lsusb : usb 정보
+htop : 프로세서 현황
+cd : 디렉토리 이동
+-----------------------------------
+mkdir: 디렉토리생성
+rm : 파일또는 디렉토리 삭제 ex) rm 파일명
+      rm -r 폴더명
+      rm -rf 폴더명(강력함)
+
+echo "하고 싶은말"
+echo "하고 싶은말" > 파일명.txt (파일로저장됨)
+cat 파일명.txt (내용 읽어오기)
+cat > 파일명.txt ('w' 새로작성하기)
+cat >> 파일명.txt ('a' 추가하기)
+cat <<'end'> dairy.txt
+---------------------------------------
+vi : 힘들어 (vim)
+nano : 편집기
+.bashrc : 유저의 환경설정파일
+sudo apt install cowsay
+sudo apt remove cowsay
+ssh 설치 : sudo apt install openssh-server
+sudo systemctl status ssh
+sudo systemctl start ssh
+sudo systemctl stop ssh
+
+ifconfig : ip 확인
+ssh ys@localhost
+ssh ys@아이피로 접속
+exit
+Ctrl + shift + w : 터미널 닫기
+Alt + shift + '+' or '-' : 세로 or 가로 분할
+--------------------------------------------------
+2025-02-18
+sudo apt update
+sudo apt install mysql-server
+sudo systemctl status mysql
+sudo systemctl stop mysql
+sudo apt remove mysql-server
+
+윈도우 + 추가 파이썬 vs 우분투에는 이미 있는 파이썬
+
+[파이썬 가상환경 생성 및 실행]  
+sudo apt install python3-pip
+sudo apt install jupyter-core
+pip3 install jupyterlab
+sudo apt install python3-venv
+
+파이썬 가상공간 실행
+python3 -m venv venv -> 폴더와 가상시스템이 생성됨
+가상사용: source venv/bin/activate
+나가기: deactivate
+폴더삭제: sudo rm -rf venv(폴더명) 
+
+[파이썬 가상환경을 만들어 사용하는 이유] => 리포트 정리
+
+venv1 생성 후 백업: pip freeze > requirements.txt
+
+venv2 생성 후 복구: pip install -r requirements.txt
+
+venv3 jupyterlab 설치후 matplotlib 설치 후 백업하고
+
+venv4 에 pip 리스트 그대로 복구하라.
+
+venv5 에 numpy 2.2.2 버전으로 복구되도록 requirements.txt 수정 후 복구하라.
+=================================================
+ssh 파일전송
+scp -P 221 ./chatbot/* pkteam@mydb.iptime.org:/home/pkteam/data/bot_kys/
+
+
+
+
+
+
+

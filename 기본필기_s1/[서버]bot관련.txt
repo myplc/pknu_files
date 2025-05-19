@@ -1,0 +1,50 @@
+<파이썬파일.py>
+import os
+from dotenv import load_dotenv
+load_dotenv()
+SECRET_KEY = os.getenv("SECRET_KEY")
+
+<.env 파일>
+SECRET_KEY = "아주아주비밀스러운 키"
+
+<.gitignore 파일>
+.env <—추가하기
+============================================
+백그라운드 동작: nohup venv/bin/python bot_이니셜.py & disown
+확인: ps -ef | grep python
+종료: kill (PID)"위에서 알아낸 해당번호"
+talk_이니셜.py
+팀 1대의 고성능 챗봇 venv_main
+예) mv text.txt ./data/text_moved.txt
+예) mv venv_main venv_main1
+
+(메인 챗봇준비) git init 준비
+방장이 github 에서 레포지토리 준비
+=================================
+mkdir bot_main( 깃 연동용)
+python3 -m venv venv_main1
+sudo apt install git -> git init -> 레포지토리 커밋
+.env 꼭 해주기
+=================================
+ssh-keygen -t rsa -b 4096 -C "plctohmi@gmail.com"
+#과한 권한이라서 이것말고 설정할께요. sudo usermod -aG root pkteam
+sudo chown -R pkteam .ssh
+
+git remote set-url origin git@github.com:myplc/pkteam06.git
+
+
+
+외부에
+포크(그팀 온라인 -> 내, 내팀 온라인 -> 내 로컬),
+클론(내,내팀 온라인 -> 내 로컬)
+PR
+
+main ------------------------------------------------>
+               |               ^
+dev1         --------->   |
+
+cli 어쩔수 없이 cli , ssh 인증
+
+
+
+

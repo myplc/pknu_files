@@ -1,0 +1,12 @@
+SEO 무엇????
+
+HTML(뼈대,정보)
+a 하이퍼링크
+.html
+
+CSS(스타일)
+컬러, 크기
+.css
+
+JavaScript(동적)
+.js

@@ -1,0 +1,7 @@
+ssh-keygen -t rsa
+id_rsa  id_rsa.pub
+
+ssh-copy-id hadoop@namenode
+ssh-copy-id hadoop@datanode1
+ssh-copy-id hadoop@datanode2
+ssh-copy-id hadoop@datanode3
