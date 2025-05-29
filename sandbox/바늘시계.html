@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <style>
+      h1,
+      h2 {
+        margin: 10px auto;
+        padding: 10px;
+        border-radius: 20px;
+        width: 50%;
+        text-align: center;
+        background-color: rgba(43, 79, 145, 0.5);
+        color: white;
+      }
+
+      .clock {
+        margin: auto;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background-color: rgb(34, 109, 138);
+        box-shadow: 10px 10px 30px rgba(15, 15, 174, 0.5);
+        position: relative;
+      }
+
+      #ss {
+        width: 5px;
+        height: 180px;
+        background-color: rgb(251, 255, 0);
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform-origin: 50% 100%;
+        border-radius: 20px;
+      }
+
+      #mm {
+        width: 10px;
+        height: 150px;
+        background-color: rgb(158, 244, 101);
+        position: absolute;
+        top: 40px;
+        left: 49.5%;
+        transform-origin: 50% 100%;
+        border-radius: 20px;
+      }
+
+      #hh {
+        width: 15px;
+        height: 100px;
+        background-color: rgb(0, 255, 255);
+        position: absolute;
+        top: 90px;
+        left: 49.5%;
+        transform-origin: 50% 100%;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>현재시간</h1>
+    <div class="clock">
+      <div id="hh"></div>
+      <div id="mm"></div>
+      <div id="ss"></div>
+    </div>
+    <h2 id="now"></h2>
+    <script>
+      const now = document.querySelector("#now");
+      const hh = document.querySelector("#hh");
+      const mm = document.querySelector("#mm");
+      const ss = document.querySelector("#ss");
+      let h = (m = s = 0);
+      const go = () =>
+        setTimeout(() => {
+          h = dayjs().format("HH");
+          m = dayjs().format("mm");
+          s = dayjs().format("ss");
+          now.innerHTML = dayjs().format("HH:mm:ss");
+          ss.style.transform = `rotate(${s == 0 ? 0 : s * 6}deg)`;
+          mm.style.transform = `rotate(${m == 0 ? 0 : m * 6}deg)`;
+          hh.style.transform = `rotate(${h == 0 ? 0 : (h - 12) * 30}deg)`;
+          console.log(h, m, s);
+          go();
+        }, 100);
+      go();
+    </script>
+  </body>
+</html>

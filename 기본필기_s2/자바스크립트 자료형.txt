@@ -1,0 +1,7 @@
+자바스크립트 자료형
+
+기본자료형      /     객체자료형
+건들수없음.     /     prototype을 통해서 수정
+
+new 기본자료형(String, Number, Blooean) -> 객체 자료형  /     Array
+

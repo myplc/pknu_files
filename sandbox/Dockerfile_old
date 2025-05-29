@@ -1,0 +1,40 @@
+# 베이스 이미지
+FROM ubuntu:22.04
+
+# 메타데이터 추가
+LABEL maintainer="PKNU_team version, YS plctohmi@gmail.com"
+
+# 환경변수 설정
+ENV DEBIAN_FRONTEND=noninteractive
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+# 필수 패키지 설치 및 정리, SSH 데몬 및 설정
+RUN apt-get update -y && \
+    apt-get install -y sudo passwd openssh-server wget nano net-tools iputils-ping openjdk-8-jdk && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    mkdir -p /var/run/sshd && \
+    echo 'PermitRootLogin no' >> /etc/ssh/sshd_config && \
+    echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config
+
+# 사용자 및 그룹 생성
+RUN groupadd pkteam && \
+    useradd -m -d /home/pkteam -s /bin/bash -g pkteam -G sudo pkteam && \
+    echo "pkteam:1234" | chpasswd && \
+    mkdir -p /home/pkteam/.ssh
+
+# .bashrc 파일 직접 생성 (컬러 설정 포함)
+RUN apt-get update -y && apt-get install python3-pip -y && \
+    echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' > /home/pkteam/.bashrc && \
+    echo 'alias ls="ls --color=auto"' >> /home/pkteam/.bashrc && \
+    echo 'export PS1="\[\033[01;32m\]\u@\h:\[\033[01;34m\]\w\[\033[00m\]$ "' >> /home/pkteam/.bashrc && \
+    echo 'export TERM=xterm-256color' >> /home/pkteam/.bashrc && \
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> /home/pkteam/.bashrc && \
+    chown pkteam:pkteam /home/pkteam/.bashrc
+
+# SSH 포트 개방
+EXPOSE 22
+
+# 컨테이너 시작 시 SSH 데몬 실행 후 대기
+CMD ["/bin/bash"] 
+#, "-c", "service ssh start && exec /bin/bash"]

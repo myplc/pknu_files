@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>타이머 응용</title>
+    <style>
+      .btn {
+        text-align: center;
+        margin: 20px;
+      }
+
+      .clock {
+        margin: auto;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background-color: rgb(58, 79, 124);
+        box-shadow: 10px 10px 30px rgba(15, 15, 174, 0.5);
+        position: relative;
+      }
+
+      #ms {
+        width: 5px;
+        height: 180px;
+        background-color: rgb(252, 255, 73);
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform-origin: 50% 100%;
+        border-radius: 20px;
+        z-index: 10;
+      }
+
+      #ss {
+        width: 10px;
+        height: 150px;
+        background-color: rgb(139, 247, 255);
+        position: absolute;
+        top: 40px;
+        left: 49.5%;
+        transform-origin: 50% 100%;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="btn">
+      <div id="time_disp">0 min 0 sec 000 msec</div>
+      <button onclick="st()">시작버튼</button>
+      <button onclick="end()">종료버튼</button>
+      <button onclick="reset()">초기화</button>
+    </div>
+    <div class="clock">
+      <div id="ms"></div>
+      <div id="ss"></div>
+    </div>
+
+    <script>
+      let s_sec = (id = end_sec = msec = min = sec = s = m = 0);
+      const ms = document.querySelector("#ms");
+      const ss = document.querySelector("#ss");
+      function st() {
+        id = setTimeout(() => {
+          end_sec += 1;
+          msec = end_sec % 100;
+          sec_ = parseInt(end_sec / 100);
+          sec = sec_ % 60;
+          min = parseInt(sec_ / 60);
+          document.getElementById(
+            "time_disp"
+          ).innerHTML = `${min}min ${sec}sec ${msec}0 msec`;
+          ms.style.transform = `rotate(${msec * 3.6}deg)`;
+          ss.style.transform = `rotate(${sec * 6 + msec * 0.06}deg)`;
+          st();
+        }, 10);
+      }
+      function rec() {
+        console.log("시간을 기록합니다.");
+      }
+      function end() {
+        clearInterval(id);
+        console.log("타이머가 종료 되었습니다.");
+      }
+      function reset() {
+        clearInterval(id);
+        s_sec = end_sec = msec = sec = min = 0;
+        ms.style.transform = `rotate(0deg)`;
+        ss.style.transform = `rotate(0deg)`;
+        document.getElementById("time_disp").innerHTML = `0 min 0 sec 000 msec`;
+        console.log("타이머가 리셋되었습니다.");
+      }
+    </script>
+  </body>
+</html>

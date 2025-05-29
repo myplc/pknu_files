@@ -1,0 +1,5 @@
+element.classList.add("클래스명") // 클래스추가
+element.classList.remove("클래스명") // 클래스제거
+element.classList.contains("클래스명") // 클래스존재? -> true / false
+element.classList.toggle("클래스명") // 클래스 있으면 삭제/ 없으면 추가
+

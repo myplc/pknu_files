@@ -1,0 +1,7 @@
+display : flex
+부모에게 적용, 자식들이 알아서 잘해요.
+
+row , column
+justify-content : 주축(기본) 왼쪽 -> 오른쪽
+align-items : 교차축(기본) 위 -> 아래
+

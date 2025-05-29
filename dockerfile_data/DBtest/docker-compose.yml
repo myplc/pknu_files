@@ -7,8 +7,7 @@ services:
     hostname: JUPYTERLAB
     command: /bin/bash -c "service ssh start && python3 -m jupyterlab --ip=0.0.0.0 --port=8888 --allow-root --FileContentsManager.delete_to_trash=False"
     ports:
-      - '8888:8888' # 기본 주피터랩 웹포트 8888
-      - '22:22' # ssh 기본 포트
+      - '8888:8888' # 기본 주피터랩 웹포트 8888     
     volumes:
       - D:\kys\code\:/home/pkdata/data # 외부저장 공간과 컨테이너 내부 저장공간 연결 설정
     networks:

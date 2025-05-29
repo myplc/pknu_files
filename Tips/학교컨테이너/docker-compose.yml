@@ -1,0 +1,232 @@
+services:
+  pkuser01:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser01
+    hostname: PKDB01
+    image: pkteam:1.3
+    ports:
+    - '221:22'
+    - 8010-8019:8010-8019
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser01:/home/pkuser/data
+  pkuser02:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser02
+    hostname: PKDB02
+    image: pkteam:1.3
+    ports:
+    - '222:22'
+    - 8020-8029:8020-8029
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser02:/home/pkuser/data
+  pkuser03:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser03
+    hostname: PKDB03
+    image: pkteam:1.3
+    ports:
+    - '223:22'
+    - 8030-8039:8030-8039
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser03:/home/pkuser/data
+  pkuser04:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser04
+    hostname: PKDB04
+    image: pkteam:1.3
+    ports:
+    - '224:22'
+    - 8040-8049:8040-8049
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser04:/home/pkuser/data
+  pkuser05:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser05
+    hostname: PKDB05
+    image: pkteam:1.3
+    ports:
+    - '225:22'
+    - 8050-8059:8050-8059
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser05:/home/pkuser/data
+  pkuser06:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser06
+    hostname: PKDB06
+    image: pkteam:1.3
+    ports:
+    - '226:22'
+    - 8060-8069:8060-8069
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser06:/home/pkuser/data
+  pkuser07:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser07
+    hostname: PKDB07
+    image: pkteam:1.3
+    ports:
+    - '227:22'
+    - 8070-8079:8070-8079
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser07:/home/pkuser/data
+  pkuser08:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser08
+    hostname: PKDB08
+    image: pkteam:1.3
+    ports:
+    - '228:22'
+    - 8080-8089:8080-8089
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser08:/home/pkuser/data
+  pkuser09:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser09
+    hostname: PKDB09
+    image: pkteam:1.3
+    ports:
+    - '229:22'
+    - 8090-8099:8090-8099
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser09:/home/pkuser/data
+  pkuser10:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser10
+    hostname: PKDB10
+    image: pkteam:1.3
+    ports:
+    - '230:22'
+    - 8100-8109:8100-8109
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser10:/home/pkuser/data
+  pkuser11:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser11
+    hostname: PKDB11
+    image: pkteam:1.3
+    ports:
+    - '231:22'
+    - 8110-8119:8110-8119
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser11:/home/pkuser/data
+  pkuser12:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser12
+    hostname: PKDB12
+    image: pkteam:1.3
+    ports:
+    - '232:22'
+    - 8120-8129:8120-8129
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser12:/home/pkuser/data
+  pkuser13:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser13
+    hostname: PKDB13
+    image: pkteam:1.3
+    ports:
+    - '233:22'
+    - 8130-8139:8130-8139
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser13:/home/pkuser/data
+  pkuser14:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser14
+    hostname: PKDB14
+    image: pkteam:1.3
+    ports:
+    - '234:22'
+    - 8140-8149:8140-8149
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser14:/home/pkuser/data
+  pkuser15:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser15
+    hostname: PKDB15
+    image: pkteam:1.3
+    ports:
+    - '235:22'
+    - 8150-8159:8150-8159
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser15:/home/pkuser/data
+  pkuser16:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser16
+    hostname: PKDB16
+    image: pkteam:1.3
+    ports:
+    - '236:22'
+    - 8160-8169:8160-8169
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser16:/home/pkuser/data
+  pkuser17:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser17
+    hostname: PKDB17
+    image: pkteam:1.3
+    ports:
+    - '237:22'
+    - 8170-8179:8170-8179
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser17:/home/pkuser/data
+  pkuser18:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser18
+    hostname: PKDB18
+    image: pkteam:1.3
+    ports:
+    - '238:22'
+    - 8180-8189:8180-8189
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser18:/home/pkuser/data
+  pkuser19:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser19
+    hostname: PKDB19
+    image: pkteam:1.3
+    ports:
+    - '239:22'
+    - 8190-8199:8190-8199
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser19:/home/pkuser/data
+  pkuser20:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser20
+    hostname: PKDB20
+    image: pkteam:1.3
+    ports:
+    - '240:22'
+    - 8200-8209:8200-8209
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser20:/home/pkuser/data
+  pkuser21:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkuser21
+    hostname: PKDB21
+    image: pkteam:1.3
+    ports:
+    - '241:22'
+    - 8210-8219:8210-8219
+    restart: always
+    volumes:
+    - D:\dockerdata\pkteam\pkuser21:/home/pkuser/data

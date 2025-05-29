@@ -1,0 +1,9 @@
+
+
+
+
+forEach :  for x in ~~ 순회, return 을 해도 반환 값이 없다.
+map : x -> y(전 후 양이 변하지 않는다), 반환값 사용용이
+filter: x -> y(전 후 양이 변한다), 반환값 사용용이
+
+reduce
