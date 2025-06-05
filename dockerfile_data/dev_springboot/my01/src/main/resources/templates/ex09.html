@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http: //www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div th:replace="~{fragments/gohome:: goToHome }"></div>
+    <fieldset>
+      <legend>Post방식 formdata 사용</legend>
+      <form action="/POST_formdata" id="myForm" method="POST">
+        <input type="text" id="input-name" name="name" placeholder="이름입력" />
+        <input type="text" id="input-age" name="age" placeholder="나이입력" />
+        <button type="submit">전송</button>
+      </form>
+      <h2
+        th:if="${name} != null"
+        th:text="${name}+'님이 / '+ ${age} + '살'"
+      ></h2>
+      <h2 th:unless="${name} != null">이름을 입력하세요.</h2>
+      <h2 th:if="${error !=null}">
+        <mark th:text="${error}">여기에 에러사항 표현</mark>
+      </h2>
+    </fieldset>
+    <script th:if="${error !=null}" th:inline="javascript">
+      alert(`[[${error}]]`);
+    </script>
+    <div th:replace="~{fragments/footer:: myFooter}"></div>
+  </body>
+</html>

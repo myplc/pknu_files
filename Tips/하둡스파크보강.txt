@@ -1,0 +1,20 @@
+namenode < ---
+datanode1 <-- spark  work1
+datanode2                work2
+datanode3                work3
+
+#외부 윈도우
+ssh hadoop@localhost -p 2220 -> namenode
+--------------------------------------------
+#namenode 위치
+ssh-keygen -t rsa
+
+ssh-copy-id hadoop@datanode1
+ssh-copy-id hadoop@datanode2
+ssh-copy-id hadoop@datanode3
+ssh-copy-id hadoop@namenode
+
+scp -P 2220 my* hadoop@localhost:/home/hadoop
+-----------------------------------------------
+# datanode1 위치
+ssh hadoop@datanode1

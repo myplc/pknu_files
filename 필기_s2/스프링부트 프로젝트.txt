@@ -1,0 +1,10 @@
+[RESTful]
+SSR - > 타임리프
+Java + thymeleaf + 스프링부트
+
+(js) fetch
+JS + 스프링부트
+
+CSR - > 리액트 + 스프링부트
+axio
+

@@ -1,6 +1,6 @@
 spring.application.name=myspring
 # 포트바꾸기 설정, 기본은 8080
-server.port=18080 
+server.port=18080 #선생님용
 
 spring.thymeleaf.cache=false
 spring.devtools.restart.enabled=true

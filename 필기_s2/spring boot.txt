@@ -1,0 +1,6 @@
+1) spring boot + index.html(정적)
+
+2) spring boot + thymeleaf(템플릿엔진, 동적)  SSR  서버사이드랜더링   or         react (CSR)
+
+
+Alt + shift + o -> 임포트가 자동
