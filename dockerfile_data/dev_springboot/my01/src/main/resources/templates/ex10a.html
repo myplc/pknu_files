@@ -153,18 +153,18 @@
 
       const sendMessage = () => {
         const userMessage = textarea.value.trim(); // 빈칸 없애기
+        const botDiv = document.createElement("div");
         if (userMessage) {
           const userDiv = document.createElement("div");
           userDiv.className = "message user";
           userDiv.innerHTML = `<div><div class="name">나</div><div class="bubble">${userMessage}</div></div></div>`;
           chatContainer.appendChild(userDiv);
-          const botDiv = document.createElement("div");
           botDiv.className = "message bot";
           botDiv.innerHTML = `<div><div class="name">myBot</div><div class="bubble">타이핑중...</div></div></div>`;
-          chatContainer.appendChild(botDiv);
           textarea.value = ""; // 전송하고 입력창 비우기
           chatContainer.scrollTop = chatContainer.scrollHeight; // 스크롤을 맨아래로 이동
         }
+        chatContainer.appendChild(botDiv);
 
         fetch("/final_chatbot", {
           method: "POST",
@@ -173,10 +173,10 @@
         })
           .then((res) => res.json())
           .then((data) => {
-            const botDiv = document.createElement("div");
+            // const botDiv = document.createElement("div");
             botDiv.className = "message bot";
             botDiv.innerHTML = `<div><div class="name">myBot</div><div class="bubble">${data.reply}</div></div></div>`;
-            chatContainer.appendChild(botDiv);
+            // chatContainer.appendChild(botDiv);
             chatContainer.scrollTop = chatContainer.scrollHeight; // 스크롤을 맨아래로 이동
           });
         v;
