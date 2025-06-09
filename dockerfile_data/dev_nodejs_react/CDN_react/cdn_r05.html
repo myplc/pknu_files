@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .comp1 {
+        width: 100%;
+        height: 30vh;
+        background-color: darkseagreen;
+      }
+      .comp2 {
+        width: 70%;
+        height: 30vh;
+        background-color: rgb(48, 142, 196);
+      }
+      .comp3 {
+        width: 70%;
+        height: 30vh;
+        background-color: rgb(82, 216, 138);
+      }
+      .comp4 {
+        width: 30%;
+        height: 40vh;
+        background-color: rgb(250, 210, 81);
+      }
+    </style>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const App = () => {
+        const [status, setStatus] = React.useState(false);
+        const change = () => setStatus(!status);
+        return (
+          <>
+            <h1>컴포넌트</h1>
+            <h2>{status}</h2>
+            <button onClick={change}>{status + "입니다."}</button>
+            <hr />
+            {status ? <Component1 /> : <Component2 />}
+            {status ? <Component3 /> : <Component4 />}
+          </>
+        );
+      };
+      const Component1 = () => (
+        <div className="comp1">
+          기본 컴포넌트 Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Dolor reiciendis, id deleniti illum accusantium porro nam earum
+          recusandae architecto facilis doloremque error quos numquam pariatur
+          commodi dicta impedit facere adipisci accusamus, reprehenderit eum
+          animi. Ipsa aliquid nostrum voluptatibus, ex modi dicta beatae
+          repudiandae, ducimus tempora reiciendis nihil quo ut ab?
+        </div>
+      );
+      const Component2 = () => (
+        <div className="comp2">
+          다른 컴포넌트 Lorem ipsum dolor sit, amet consectetur adipisicing
+          elit. Nihil cupiditate eveniet reiciendis enim recusandae a excepturi
+          culpa. Consequuntur corrupti debitis similique fuga commodi, in nam
+          minima nesciunt necessitatibus nostrum. Doloremque eveniet, rerum
+          voluptate obcaecati libero repellat modi eius voluptas? Numquam optio
+          tempora harum dolore dicta vel magnam quas id, architecto quia non
+          consectetur aut eos.
+        </div>
+      );
+      const Component3 = () => (
+        <div className="comp3">
+          3번 컴포넌트 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Nihil cupiditate eveniet reiciendis enim recusandae a excepturi culpa.
+          aut eos.
+        </div>
+      );
+      const Component4 = () => (
+        <div className="comp4">
+          4번 컴포넌트 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Nihil cupiditate eveniet reiciendis enim recusandae a excepturi culpa.
+          harum dolore dicta vel magnam quas id, architecto quia non consectetur
+          aut eos.
+        </div>
+      );
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+  </body>
+</html>

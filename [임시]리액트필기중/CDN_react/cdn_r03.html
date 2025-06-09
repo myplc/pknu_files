@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        background-color: rgb(27, 99, 182);
+        color: white;
+        padding: 10px;
+        border: none;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.452);
+      }
+    </style>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      // let count = 0;
+      const App = () => {
+        const [count, setCount] = React.useState(0);
+        const upup = () => setCount(count < 20 ? count + 1 : 20);
+        const dndn = () => setCount(count > 0 ? count - 1 : 0);
+        console.log(count);
+        return (
+          <>
+            <h1>JSX 문법으로 숫자값 증가시키기</h1>
+            <h2>
+              const [변수, 변수값을 변경하는 함수] = React.useState(초기값)
+            </h2>
+            <hr />
+            <p>
+              <b>예제</b>
+            </p>
+            <p>
+              <mark> 숫자값 증가 / 감소 시키기</mark>
+            </p>
+            <h2>{count}</h2>
+            <button onClick={upup}>
+              <strong>클릭 업</strong>
+            </button>
+            <button onClick={dndn}>
+              <strong>클릭 다운</strong>
+            </button>
+          </>
+        );
+      };
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+  </body>
+</html>

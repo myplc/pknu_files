@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .board_wrap {
+        width: 80%;
+        margin: 100px auto;
+      }
+      .board_title {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .board_list {
+        width: 100%;
+        border-top: 2px solid black;
+      }
+      .board_list div {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+      .board_list .header {
+        font-weight: bold;
+        background-color: rgb(102, 189, 189);
+      }
+      .board_list .row {
+        background-color: white;
+      }
+      .board_list .row:nth-child(even) {
+        background-color: rgb(199, 214, 182);
+      }
+    </style>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script src="./cdn_r09.js"></script>
+    <script type="text/babel">
+      const ListItem = () => {
+        return (
+          <>
+            {users.map((v) => {
+              return (
+                <div className="row" key={v.id}>
+                  <div>{v.id}</div>
+                  <div>{v.title}</div>
+                  <div>{v.name}</div>
+                  <div>{v.date}</div>
+                  <div>{v.count}</div>
+                </div>
+              );
+            })}
+          </>
+        );
+      };
+
+      const List = () => {
+        return (
+          <div className="board_wrap">
+            <div className="board_title">
+              <h1>게시글 목록</h1>
+            </div>
+            <div className="board_list">
+              <div className="header">
+                <div>번호</div>
+                <div>제목</div>
+                <div>작성자</div>
+                <div>작성일</div>
+                <div>조회수</div>
+              </div>
+              <ListItem />
+            </div>
+          </div>
+        );
+      };
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<List />);
+    </script>
+  </body>
+</html>
