@@ -137,7 +137,7 @@ public class My01Controller {
 
     @GetMapping("/final_chatbot")
     public String ex10Chat(Model model) {
-        return "ex10";
+        return "ex10a";
     }
 
 }

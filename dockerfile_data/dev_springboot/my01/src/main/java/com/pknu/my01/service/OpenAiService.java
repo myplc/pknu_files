@@ -24,13 +24,13 @@ public class OpenAiService {
         headers.setContentType(MediaType.APPLICATION_JSON);
 
         List<Map<String, Object>> messages = List.of(
-                Map.of("role", "system", "content", "너는 고객응대용으로 만들어 졌고, 존댓말을 사용하며 간결하게 대답해줘. "),
+                Map.of("role", "system", "content", "너는 고객응대용으로 만들어 졌고, 존댓말을 사용하며 간결하게 대답해줘. 200자 이내로 정리해서 답해줘. "),
                 Map.of("role", "user", "content", prompt));
 
         Map<String, Object> body = Map.of(
-                "model", "gpt-3.5-turbo", // gpt 모델선정
+                "model", "gpt-4.1-nano", // gpt 모델선정
                 "messages", messages, // 메세지 입력
-                "temperature", 1.2, // 온도 0~2까지
+                "temperature", 0.8, // 온도 0~2까지
                 "max_tokens", 200, // 최대 토큰 사용량
                 "presence_penalty", 0.6, // 새로운 주제 유도
                 "frequency_penalty", 0.5 // 반복억제
