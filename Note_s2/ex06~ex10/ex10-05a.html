@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        gap: 10px;
+        /* flex-wrap: wrap; */
+      }
+      .box {
+        /* box-sizing: border-box; */
+        height: 100px;
+        background-color: coral;
+        color: white;
+        text-align: center;
+        line-height: 100px;
+        font-size: 1.2rem;
+        min-width: 0;
+        /* border: 1px dotted #000000; */
+      }
+      .box1 {
+        flex-basis: 100px;
+        /* flex-basis: 20%; */
+      }
+      .box2 {
+        flex-basis: 200px;
+        /* flex-basis: 30%; */
+      }
+      .box3 {
+        flex-basis: 300px;
+        /* flex-basis: 50%; */
+      }
+    </style>
+  </head>
+  <body>
+    <h3>flex-basis 예제</h3>
+    <!-- div.container>(div.box.box$)*3 -->
+    <div class="container">
+      <div class="box box1">20%</div>
+      <div class="box box2">30%</div>
+      <div class="box box3">50%</div>
+    </div>
+  </body>
+</html>

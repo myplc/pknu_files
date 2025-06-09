@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        background-color: azure;
+        padding: 2rem;
+      }
+
+      .box {
+        width: 520px;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 100px auto;
+        /* border: 1px solid black; */
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.404);
+      }
+      .chat-container {
+        width: 100%;
+        box-sizing: border-box;
+        /* transform: translateY(50%); */
+        /* height: 500px; */
+        background-color: white;
+        padding: 1rem 3rem 0 4rem;
+        border-radius: 15px 15px 0 0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        flex: 6;
+      }
+
+      .chat-input {
+        flex: 1;
+        width: 100%;
+        background-color: aquamarine;
+        display: flex;
+        justify-content: stretch;
+      }
+
+      textarea {
+        width: 70%;
+        outline: none;
+        border: none;
+        background-color: rgb(244, 245, 239);
+        resize: none;
+        padding: 30px 30px 20px;
+        font-size: 1.2rem;
+        color: rgb(73, 66, 141);
+        font-weight: bold;
+      }
+      button {
+        width: 30%;
+        font-weight: bold;
+        font-size: 1.2rem;
+        border: none;
+        color: rgb(26, 134, 134);
+        background-color: rgb(255, 255, 123);
+        cursor: pointer;
+      }
+
+      .message {
+        display: flex;
+        margin-bottom: 1.2rem;
+        align-items: end;
+      }
+
+      .message.bot {
+        justify-content: start;
+      }
+
+      .message.user {
+        justify-content: end;
+      }
+
+      .bubble {
+        max-width: 220px;
+        position: relative;
+        background-color: #e0dfdf;
+        padding: 0.7rem 2rem;
+        border-radius: 20px;
+        word-break: break-word;
+        white-space: pre-line;
+      }
+
+      .name {
+        font-size: 0.8rem;
+        color: #555;
+        margin: 0 10px 2px;
+      }
+
+      .user .bubble {
+        background-color: yellow;
+      }
+
+      .user .name {
+        text-align: right;
+      }
+
+      .chat-container::-webkit-scrollbar {
+        background: #e0dfdf;
+        width: 30px;
+      }
+
+      .chat-container::-webkit-scrollbar-thumb {
+        background: #376daa;
+        border-radius: 6px;
+      }
+
+      .chat-container::-webkit-scrollbar-thumb:active {
+        background: #95bb0d;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- div.chat-container>div.message.bot>div>div.name{myBot}+div.bubble{안녕하세요. 무엇을 도와드릴까요?}^^div.message.user>div>div.name{나}+div.bubble{Flex로 채팅화면을 만들수 있냐?} -->
+
+    <div class="box">
+      <div class="chat-container">
+        <div class="message bot">
+          <div>
+            <div class="name">myBot</div>
+            <div class="bubble">안녕하세요. 무엇을 도와드릴까요?</div>
+          </div>
+        </div>
+        <div class="message user">
+          <div>
+            <div class="name">나</div>
+            <div class="bubble">Flex로 채팅화면을 만들수 있냐?</div>
+          </div>
+        </div>
+        <div class="message bot">
+          <div>
+            <div class="name">myBot</div>
+            <div class="bubble">
+              네, Flex를 사용하여 채팅 화면을 만들 수 있습니다! CSS의 display:
+              flex 속성을 활용하면 채팅 메시지를 정렬하고 배치하는 데
+              유용합니다. 예를 들어, 채팅 화면을 만들 때 다음과 같은 구조를
+              사용할 수 있습니다:
+            </div>
+          </div>
+        </div>
+        <div class="message user">
+          <div>
+            <div class="name">나</div>
+            <div class="bubble">
+              Flex로 구성한 채팅 화면의 스타일을 어떻게 개선할 수 있나?
+            </div>
+          </div>
+        </div>
+        <div class="message bot">
+          <div>
+            <div class="name">myBot</div>
+            <div class="bubble">
+              채팅 화면의 스타일을 개선하는 방법은 여러 가지가 있습니다. 다음과
+              같은 요소를 고려하면 더욱 깔끔하고 사용자 친화적인 디자인을 만들
+              수 있습니다.
+            </div>
+          </div>
+        </div>
+        <div class="message user">
+          <div>
+            <div class="name">나</div>
+            <div class="bubble">flex말고 grid도 설명해 줄수 있나?</div>
+          </div>
+        </div>
+        <div class="message bot">
+          <div>
+            <div class="name">myBot</div>
+            <div class="bubble">
+              네! grid를 사용하여 채팅 화면을 만들 수도 있습니다. grid는 flex와
+              달리 행과 열을 기반으로 요소를 배치할 수 있어 더욱 정교한
+              레이아웃을 만들기에 적합합니다. Grid를 활용한 채팅 화면 다음과
+              같은 구조를 사용할 수 있습니다:
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- div.chat-input>textarea+button#send-btn -->
+      <div class="chat-input">
+        <textarea
+          name=""
+          id="text-area"
+          placeholder="메세지를 입력하세요."
+        ></textarea>
+        <button id="send-btn">전송</button>
+      </div>
+    </div>
+
+    <script>
+      const sendBtn = document.getElementById("send-btn");
+      const chatContainer = document.querySelector(".chat-container");
+      const textarea = document.querySelector("#text-area");
+
+      const sendMessage = () => {
+        const userMessage = textarea.value.trim(); // 빈칸 없애기
+        if (userMessage) {
+          const userDiv = document.createElement("div");
+          userDiv.className = "message user";
+          userDiv.innerHTML = `<div><div class="name">나</div><div class="bubble">${userMessage}</div></div></div>`;
+          chatContainer.appendChild(userDiv);
+          textarea.value = ""; // 전송하고 입력창 비우기
+          chatContainer.scrollTop = chatContainer.scrollHeight; // 스크롤을 맨아래로 이동
+        }
+      };
+      sendBtn.addEventListener("click", sendMessage);
+      textarea.addEventListener("keydown", (event) => {
+        console.log(event);
+        if (event.key === "Enter" && !event.shiftKey) {
+          // if (event.key === "Enter" && event.key !== "Shift") {
+          event.preventDefault(); // 한칸내리는 기능 방지
+          sendMessage(); // 메세지 전송
+        }
+      });
+    </script>
+  </body>
+</html>

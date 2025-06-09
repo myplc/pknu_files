@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgb(253, 224, 239);
+        padding-top: 8rem;
+        display: flex;
+        justify-content: center;
+      }
+      .card {
+        background-color: #fff;
+        max-width: 360px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 30px;
+        overflow: hidden;
+        /* box-shadow: 0;
+        font: 1.5rem rgba(0, 0, 0, 0.5); */
+      }
+      .banner {
+        background-image: url("https://image.utoimage.com/preview/cp924216/2021/03/202103013249_500.jpg");
+        display: flex;
+        background-size: cover;
+        height: 140px;
+        justify-content: center;
+      }
+      .profile {
+        width: 130px;
+        height: 130px;
+        /* background-image: url("https://img.freepik.com/free-vector/cute-cool-boy-dabbing-pose-cartoon-vector-icon-illustration-people-fashion-icon-concept-isolated_138676-5680.jpg?semt=ais_hybrid&w=740"); */
+        background-image: url("https://cdn.imweb.me/thumbnail/20220217/e870e65d082d7.png");
+        background-size: 150px;
+        border-radius: 50%;
+        box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.7);
+        transform: translateY(60%);
+        transition: transform 0.3s ease;
+        /* position: relative; */
+        /* top: 50px; */
+      }
+      .profile:hover {
+        transform: translateY(60%) scale(1.3);
+      }
+      .name {
+        text-align: center;
+        padding-top: 60px;
+      }
+      .follow-btn {
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .follow-btn button {
+        font-size: medium;
+        font-weight: bold;
+        background-color: yellow;
+        border: none;
+        padding: 1rem;
+        outline: none;
+        border-radius: 50px;
+      }
+      .desc {
+        padding: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.card>div.banner>div.profile^h2.name{Yusung}+div.follow-btn>button{Follow}+div.desc{내용들...} -->
+    <div class="card">
+      <div class="banner">
+        <div class="profile"></div>
+      </div>
+      <h2 class="name">Yusung</h2>
+      <div class="follow-btn"><button>Follow</button></div>
+      <div class="desc">
+        열심히 수강해 주시는 여러분 정말 고생이 많습니다. 항상 노력하여 최고의
+        프로그래머가 되도록 합시다.
+      </div>
+    </div>
+  </body>
+</html>

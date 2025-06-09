@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      li {
+        background-color: cadetblue;
+        color: rgb(255, 255, 255);
+        margin: 1px;
+      }
+      li::marker {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let list = "<ol type='1'>";
+
+      for (let i = 0; i < 10; i++) {
+        list += `<li>건강합시다.</li>`;
+      }
+      list += "</ol>";
+
+      document.body.innerHTML = list;
+    </script>
+  </body>
+</html>

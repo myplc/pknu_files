@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구글폼과 회원가입양식2</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background: linear-gradient(to right bottom, #000000e8, #d1d1d184);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px;
+        max-width: 400px;
+        width: 100%;
+      }
+      .container h2 {
+        text-align: center;
+        color: #333;
+      }
+      label {
+        display: block;
+        font-weight: bold;
+        color: #444;
+        margin-bottom: 5px;
+      }
+      input {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+      }
+
+      input:focus {
+        border-color: rgb(130, 130, 218);
+        outline: none;
+      }
+      .container div {
+        margin-bottom: 20px;
+      }
+      button {
+        width: 100%;
+        padding: 1rem;
+        background-color: rgb(65, 65, 134);
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: 10px 0;
+      }
+      button:hover {
+        background-color: rgb(130, 130, 198);
+      }
+      form {
+        width: 100%;
+      }
+      .note {
+        text-align: center;
+        margin-top: 1rem;
+        color: #888;
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>회원가입</h2>
+      <form
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeaR9GDawGltkNHwWcwWrn7R7zrEiVz0K5J9fHzeM5qY74kjA/formResponse"
+        method="POST"
+        onsubmit="return test()"
+      >
+        <!-- (div>label+input)*4 -->
+        <div>
+          <label for="username">사용자 이름</label>
+          <input type="text" id="username" name="entry.1561355693" required />
+        </div>
+        <div>
+          <label for="email">이메일</label>
+          <input type="text" id="email" name="entry.999705345" required />
+        </div>
+        <div>
+          <label for="password">비밀번호</label>
+          <input type="password" id="password" name="entry.30254069" required />
+        </div>
+        <div>
+          <label for="confirm-pasword">비밀번호 확인</label>
+          <input type="password" id="confirm-password" required />
+        </div>
+        <button type="submit">가입하기</button>
+        <hr />
+        <p class="note">이미 계정이 있으신가요? <a href="#">로그인</a></p>
+      </form>
+    </div>
+    <script>
+      const test = () => {
+        const pw1 = document.querySelector("#password").value;
+        const pw2 = document.querySelector("#confirm-password").value;
+        console.log(pw1, pw2);
+        if (pw1 !== pw2) {
+          alert("비밀번호가 일치하지 않습니다.");
+          return false;
+        }
+        return true;
+      };
+    </script>
+  </body>
+</html>

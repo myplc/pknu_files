@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      li {
+        list-style: none;
+        float: left;
+        padding: 0 15px;
+        cursor: pointer;
+      }
+      li::after {
+        content: "|";
+        color: #777;
+        float: right;
+        margin-right: -17px;
+      }
+      li:nth-last-of-type(1)::after {
+        content: "";
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>로그인</li>
+      <li>회원가입</li>
+      <li>마이페이지</li>
+      <li>사이트맵</li>
+      <li>고객센터</li>
+    </ul>
+    <script>
+      const pt = document.querySelectorAll("li");
+
+      // for v in pt:
+
+      pt.forEach((v) => {
+        v.addEventListener("click", () => {
+          alert(v.textContent + " 누르지마!!");
+        });
+      });
+    </script>
+  </body>
+</html>

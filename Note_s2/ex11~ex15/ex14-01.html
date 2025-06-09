@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      table {
+        width: 250px;
+        margin: 0 auto;
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+      }
+      td {
+        background-color: antiquewhite;
+        text-align: center;
+        padding: 10px;
+      }
+      tr:nth-of-type(even) td {
+        background-color: rgb(207, 244, 245);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- table>(tr>td{$}*6)*3 -->
+
+    <script>
+      const inputColumn = prompt("한줄에 몇명 앉을래?") || 6;
+      const inputAll = prompt("총 인원 몇명?") || 15;
+      console.log(inputAll / inputColumn);
+      list = "<h1>자리배치도</h1><table>";
+      let seat = 0;
+      for (let j = 0; j < inputAll / inputColumn; j++) {
+        list += `<tr>`;
+        for (let i = 0; i < inputColumn; i++) {
+          if (seat < inputAll) {
+            list += `<td>${++seat}</td>`;
+          } else {
+            `<td></td>`;
+          }
+        }
+        list += `</tr>`;
+      }
+
+      list += `</table>`;
+      document.body.innerHTML = list;
+    </script>
+  </body>
+</html>

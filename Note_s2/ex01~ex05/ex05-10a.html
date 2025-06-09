@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font: 14px "굴림", gulim;
+        /* height: 300vh; */
+      }
+      #box {
+        width: 550px;
+        height: 700px;
+        border: 3px dotted #222;
+        position: relative;
+      }
+      p {
+        width: 130px;
+        height: 80px;
+        padding: 10px;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.562);
+        margin: 0;
+      }
+      .myR {
+        background-color: rgba(240, 128, 128, 0.788);
+        position: relative;
+        z-index: 1000;
+      }
+      .myG {
+        background-color: rgba(127, 255, 212, 0.76);
+        position: absolute;
+        top: 50px;
+        left: 30px;
+        z-index: 5;
+      }
+      .myB {
+        background-color: rgba(100, 148, 237, 0.788);
+        position: relative;
+        top: 30px;
+        left: 10px;
+        z-index: 6;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div#box>p.my$*3 -->
+    <div id="box">
+      <p class="myR">박스의 크기와 위치를 잘 살펴보아야 합니다.</p>
+      <p class="myG">박스의 포지션 속성을 바꿔가며 테스트해 보아야 합니다.</p>
+      <p class="myB">
+        포지션을 이해하기 위해서는 시험해보고 관찰해 보는 것이 절대적으로
+        필요합니다.
+      </p>
+    </div>
+  </body>
+</html>

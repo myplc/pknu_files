@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const show = function () {
+        alert("알림창이 보여집니다.");
+      };
+      const myinfo = function (v) {
+        console.log(v.value);
+        console.log(v.id);
+        console.log(v.className); // 스트링형식
+        console.log(v.classList); // 배열로
+        console.log(v.name);
+      };
+    </script>
+  </head>
+  <body>
+    <button onclick="show()">알림창</button>
+    <button
+      id="h-id"
+      onclick="myinfo(this)"
+      value="hello"
+      name="okok"
+      class="btn test good"
+    >
+      myinfo
+    </button>
+  </body>
+</html>

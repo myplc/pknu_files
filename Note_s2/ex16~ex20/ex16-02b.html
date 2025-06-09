@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let test = 777;
+
+      function fn() {
+        test = 888;
+        console.log(test);
+        return 100;
+        test = 999;
+        console.log(test);
+      }
+
+      console.log(1, test);
+      const test2 = fn();
+
+      console.log(2, test);
+      console.log(test2);
+    </script>
+  </body>
+</html>

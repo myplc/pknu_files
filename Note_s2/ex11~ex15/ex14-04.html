@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열</title>
+    <script>
+      /* 글자도 배열처럼 */
+      const str = "안녕하세요";
+      console.log(str[0], str[1], str[4]);
+      console.log(str[str.length - 1]);
+      /* 배열선언1 */
+      const array0 = new Array(5);
+      console.log(array0);
+      /* 배열선언2 */
+      const array = [273, "string", true, function () {}, {}, [273, 103]];
+      console.log(array, array.length);
+      array[1] = "나는누구";
+      /* 배열초기화 */
+      let arr1 = [1, 2, 3];
+      console.log(arr1);
+      arr1 = [];
+      console.log(arr1);
+      const arr2 = [11, 22, 33];
+      console.log(arr2);
+      arr2.length = 0;
+      console.log(arr2);
+      console.log("======절취선======");
+      /* 유연한 배열, 크기고정이 안됨, 그래도 차례로 쓸것 */
+      array[23] = "여긴어디?";
+      console.log(array, array.length);
+      console.log(array[10]);
+      /* 특이사항, 배열도 객체*/
+      const arr = [1, 2, 3];
+      console.log(arr, arr.length);
+      arr["나는누구"] = "여긴어디";
+      console.log(arr, arr.length);
+      arr.forEach((v) => console.log(v));
+    </script>
+  </head>
+  <body></body>
+</html>

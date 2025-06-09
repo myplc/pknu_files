@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        gap: 10px;
+        max-width: 100%;
+        border: 2px dotted gray;
+        overflow: hidden;
+        /* flex-wrap: wrap; */
+      }
+      .box {
+        /* box-sizing: border-box; */
+        flex-basis: 300px;
+        height: 100px;
+        background-color: rgb(217, 141, 255);
+        color: white;
+        text-align: center;
+        line-height: 100px;
+        font-size: 1.2rem;
+        min-width: 0;
+        /* border: 1px dotted #000000; */
+      }
+      .box1 {
+        flex-shrink: 1;
+      }
+      .box2 {
+        flex-shrink: 2;
+      }
+      .box3 {
+        flex-shrink: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>flex-shrink 예제</h3>
+    <!-- div.container>(div.box.box$)*3 -->
+    <div class="container">
+      <div class="box box1">1</div>
+      <div class="box box2">2</div>
+      <div class="box box3">3</div>
+    </div>
+  </body>
+</html>

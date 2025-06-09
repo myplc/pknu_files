@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const inp = 60;
+      /*  if (inp == 100) {
+         console.log("A++ 입니다.");
+       } else if (inp < 60) {
+         console.log("F 입니다.");
+       } else if (inp < 70) {
+         console.log("D 입니다.");
+       } else if (inp < 80) {
+         console.log("C 입니다.");
+       } else if (inp < 90) {
+         console.log("B입니다.");
+       } else if (inp < 100) {
+         console.log("A 입니다.");
+       } else {
+         console.log("점수을 잘못 입력하셨습니다.");
+       } */
+      if (inp <= 100) {
+        if (inp == 100) {
+          console.log("A++ 입니다.");
+        }
+        if (inp >= 90 && inp < 100) {
+          console.log("A 입니다.");
+        }
+        if (inp >= 80 && inp < 90) {
+          console.log("B입니다.");
+        }
+        if (inp >= 70 && inp < 80) {
+          console.log("C 입니다.");
+        }
+        if (inp >= 60 && inp < 70) {
+          console.log("D 입니다.");
+        }
+        if (inp < 60) {
+          console.log("F 입니다.");
+        }
+      } else {
+        console.log("점수을 잘못 입력하셨습니다.");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

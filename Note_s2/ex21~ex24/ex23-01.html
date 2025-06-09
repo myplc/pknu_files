@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 390vh;
+      }
+      section {
+        height: 95vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        color: burlywood;
+        background-color: beige;
+      }
+      section:nth-of-type(even) {
+        background-color: rgb(220, 232, 247);
+        color: cadetblue;
+      }
+      .scroll-text {
+        position: fixed;
+        top: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.6rem;
+        font-weight: bold;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.413);
+        padding: 10px;
+        border-radius: 20px;
+      }
+      .left-menu,
+      .right-menu {
+        position: fixed;
+        height: 250px;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        opacity: 0;
+        transition: 0.5s ease;
+        top: 100px;
+      }
+      .left-menu {
+        left: -200px;
+        background-color: rgba(87, 143, 186, 0.58);
+        width: 150px;
+      }
+      .right-menu {
+        width: 250px;
+        right: -200px;
+        background-color: rgba(191, 128, 83, 0.597);
+      }
+      .end-line {
+        display: flex;
+        justify-content: center;
+      }
+      .end-menu {
+        position: fixed;
+        font-size: 2rem;
+        top: 90%;
+        color: white;
+        background-color: rgb(230, 153, 153);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        height: 50px;
+        width: 22%;
+        transition: 0.5s ease;
+        opacity: 0;
+      }
+      .show-end {
+        /* top: 90%; */
+        opacity: 1;
+        width: 100%;
+      }
+      .show-left {
+        left: 10px;
+        opacity: 1;
+      }
+      .show-right {
+        right: 10px;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.scroll-text#scrollText{처음이에요. 스크롤을 내려보세요.} -->
+    <div class="scroll-text" id="scrollText">
+      처음이에요. 스크롤을 내려보세요.
+    </div>
+    <!-- div.left-menu#leftMenu{왼쪽메뉴} -->
+    <div class="left-menu" id="leftMenu">
+      왼쪽메뉴
+      <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ol>
+    </div>
+    <div class="right-menu" id="rightMenu">
+      오른쪽메뉴
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <!-- div.end-line>div.class.end-menu#endMenu{감사합니다!} -->
+    <div class="end-line">
+      <div class="end-menu" id="endMenu">감사합니다!</div>
+    </div>
+
+    <!-- section{$단계}*5 -->
+    <section>1단계</section>
+    <section>2단계</section>
+    <section>3단계</section>
+    <section>4단계</section>
+    <section>End</section>
+
+    <script>
+      const scollText = document.getElementById("scrollText");
+      const leftMenu = document.getElementById("leftMenu");
+      const rightMenu = document.getElementById("rightMenu");
+      const endMenu = document.getElementById("endMenu");
+      let once = false;
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        console.log(scrollY);
+        /* 스크롤 위치에 따른 텍스트를 변경 */
+        if (scrollY < 900) {
+          scollText.textContent = `아래로 스크롤을 내려보세요/${scrollY}`;
+        } else if (scrollY < 1700) {
+          scollText.textContent = `지금은 2단계 입니다/${scrollY}`;
+        } else if (scrollY < 2500) {
+          scollText.textContent = `지금은 3단계 입니다/${scrollY}`;
+        } else if (scrollY < 3200) {
+          scollText.textContent = `지금은 4단계 입니다/${scrollY}`;
+        } else if (scrollY < 3400) {
+          scollText.textContent = `마지막 구간이에요/${scrollY}`;
+        }
+
+        if (scrollY > 500 && scrollY < 1500) {
+          leftMenu.classList.add("show-left");
+        } else {
+          leftMenu.classList.remove("show-left");
+        }
+        if (scrollY > 1400 && scrollY < 2600) {
+          rightMenu.classList.add("show-right");
+        } else {
+          rightMenu.classList.remove("show-right");
+        }
+
+        const toTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+        if (scrollY > 3500 && !once) {
+          once = true;
+          scollText.textContent = `처음으로 갈께요~ 꽉잡아요!/${scrollY}`;
+          endMenu.classList.add("show-end");
+          setTimeout(toTop, 2000);
+        } else if (scrollY <= 2800) {
+          once = false;
+          endMenu.classList.remove("show-end");
+        }
+      });
+    </script>
+  </body>
+</html>

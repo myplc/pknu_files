@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Grid</title>
+    <style>
+      :root {
+        --myblue1: #268ab4;
+        --myblue2: #4fc3cd;
+        --myblue3: #a4dde4;
+        --mygreen1: #367a33;
+        --mygreen2: #6eb86a;
+        --mygreen3: #b1d1af;
+        --myred1: #630c0c;
+        --myred2: #f46b6b;
+        --myred3: #c18282;
+      }
+
+      div div {
+        margin: 3px;
+        border: 2px solid #ccc;
+        box-shadow: 2px 2px 2px #000;
+        color: white;
+      }
+
+      .wrap {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 100px 200px 100px 100px;
+      }
+
+      #grid1 {
+        background: var(--myblue1);
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+
+      #grid2 {
+        background: var(--myblue2);
+        grid-column-start: 3;
+        grid-column-end: 4;
+      }
+
+      #grid3 {
+        background: var(--mygreen1);
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 4;
+      }
+
+      #grid4 {
+        background: var(--mygreen2);
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+
+      #grid5 {
+        background: var(--mygreen3);
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+
+      #grid6 {
+        background: var(--myred3);
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+      }
+
+      #grid7 {
+        background: var(--myred2);
+        grid-column-start: 3;
+        grid-column-end: 4;
+      }
+
+      #grid8 {
+        background: var(--myred1);
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div id="grid1">GRID1</div>
+      <div id="grid2">GRID2</div>
+      <div id="grid3">GRID3</div>
+      <div id="grid4">GRID4</div>
+      <div id="grid5">GRID5</div>
+      <div id="grid6">GRID6</div>
+      <div id="grid7">GRID7</div>
+      <div id="grid8">GRID8</div>
+    </div>
+  </body>
+</html>

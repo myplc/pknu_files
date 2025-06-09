@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>박스모델</title>
+    <style>
+      .wrapper {
+        width: 800px;
+        margin: 10px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+      }
+      .box {
+        padding: 20px;
+        margin: 10px;
+      }
+      /* Do it! float 속성을 사용해 배치하기 */
+      #box1 {
+        background: #ffd800;
+        float: left;
+      }
+      #box2 {
+        background: #0094ff;
+        float: right;
+      }
+      .cc {
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box" id="box1">박스1</div>
+      <div class="box" id="box2">박스2</div>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+        deserunt. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem,
+        ipsum dolor.
+      </p>
+      <p class="cc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum illo amet
+        nesciunt facilis porro? Eaque voluptatem laborum quidem in tempore harum
+        debitis eum nam vitae ipsam a deleniti ullam quod odit mollitia illum
+        reiciendis voluptatum, quae accusamus corporis ipsa nulla.
+      </p>
+    </div>
+  </body>
+</html>

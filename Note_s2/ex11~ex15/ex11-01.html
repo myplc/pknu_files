@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js의 시작 (console)</title>
+    <script>
+      /* 필수 */
+      console.log("콘솔에 보이는 내용입니다.");
+      /* 그외 */
+      console.group("가벼운것"); // 그룹시작
+      console.info("정보입니다.");
+      console.warn("경고합니다.");
+      console.groupEnd(); // 그룹끝
+      console.group("심각한것");
+      console.debug("디버깅합니다!");
+      console.error("치명적매력입니다.");
+      console.groupEnd();
+      /* 특수 */
+      console.log(
+        "%c강력합니다!",
+        "border:1px solid red;background-color:yellow;color:blue;font-size:2rem"
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex 레이아웃</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      .wrap {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background-color: antiquewhite;
+      }
+      header,
+      footer {
+        flex: 2;
+        background-color: cadetblue;
+        text-align: center;
+        font-size: 3rem;
+      }
+      nav {
+        flex: 1;
+        background-color: gold;
+      }
+      article {
+        background-color: rgb(230, 190, 141);
+      }
+      main {
+        flex: 12;
+        display: flex;
+      }
+      aside,
+      section {
+        flex: 1;
+      }
+      article {
+        flex: 3;
+      }
+      footer {
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.wrap>header{Never}+nav{nav}+main>aside{aside}+article{article}+section{section}^footer{정보처리방침 정책고객센터 Never corp.} -->
+    <div class="wrap">
+      <header>Never</header>
+      <nav>nav</nav>
+      <main>
+        <aside>aside</aside>
+        <article>article</article>
+        <section>section</section>
+      </main>
+      <footer>정보처리방침 정책고객센터 Never corp.</footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>호이스팅</title>
+    <script>
+      // 호이스팅 변수와 함수가 최상단에 끌려올라가는 현상
+      // 내용은 기본값으로 선언된다.
+
+      function abc() {}
+      var num; // undefined
+
+      var num = 256;
+      console.log(num);
+
+      abc();
+
+      /* 1. 변수호이스팅 */
+      console.log(num);
+      var num = 1256;
+      console.log(num);
+
+      /* 2. 함수호이스팅 */
+      function abc() {
+        let bb = "나는 밤양갱";
+        console.log(bb);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

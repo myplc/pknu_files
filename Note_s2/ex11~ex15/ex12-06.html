@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const dollar = +prompt("환전할 달러를 입력해 주세요.", 1);
+      const ex = 1400;
+      const won = dollar * ex;
+      console.log(dollar, typeof dollar);
+      const list = `<h1>환전하실 ${dollar}달러는 ${won}원 입니다.</h1>`;
+      //   document.write(list);
+      console.debug("이지점=>");
+      document.body.innerHTML = list;
+      //   document.body.textContent = list;
+    </script>
+  </body>
+</html>

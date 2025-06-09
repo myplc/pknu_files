@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .btn {
+        text-align: center;
+        margin: 20px;
+      }
+      .clock {
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background-color: rgb(49, 101, 103);
+        margin: 0 auto 30px;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.646);
+        position: relative;
+      }
+      #ms {
+        width: 5px;
+        height: 180px;
+        background-color: yellow;
+        border-radius: 20px;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translate(-50%);
+        transform-origin: 50% 100%;
+        z-index: 100;
+      }
+      #ss {
+        width: 10px;
+        height: 150px;
+        background-color: rgb(128, 234, 255);
+        border-radius: 20px;
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translate(-50%);
+        transform-origin: 50% 100%;
+      }
+      button {
+        margin: 10px;
+      }
+      #rec-disp {
+        text-align: center;
+        list-style-position: inside;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.btn>div#time_disp+button*3^div.clock>div#ms+div#ss -->
+    <div class="btn">
+      <div id="time_disp">0 min 0 sec 000 msec</div>
+      <button onclick="st()">시작버튼</button>
+      <button onclick="rec()">기록버튼</button><br />
+      <button onclick="end()">정지버튼</button
+      ><button onclick=" reset()">리셋버튼</button>
+    </div>
+    <div class="clock">
+      <div id="ms"></div>
+      <div id="ss"></div>
+    </div>
+    <ol id="rec-disp">
+      [기록]
+    </ol>
+    <script>
+      let s_sec = (id = end_sec = msec = min = sec = s = m = 0);
+      const ms = document.getElementById("ms");
+      const ss = document.getElementById("ss");
+      const recDisp = document.getElementById("rec-disp");
+      function st() {
+        id = setTimeout(() => {
+          end_sec += 1;
+          msec = end_sec % 100;
+          sec_ = parseInt(end_sec / 100);
+          sec = sec_ % 60;
+          min = parseInt(sec_ / 100);
+          document.getElementById(
+            "time_disp"
+          ).innerHTML = `${min} min ${sec} sec ${msec}0 msec`;
+          ms.style.transform = `rotate(${msec * 3.6}deg)`;
+          ss.style.transform = `rotate(${sec * 6 + msec * 0.06}deg)`;
+          st();
+        }, 9);
+      }
+      function rec() {
+        const li = document.createElement("li");
+        li.textContent = `${min} min ${sec} sec ${msec}0 msec`;
+        recDisp.appendChild(li);
+      }
+      function end() {
+        clearTimeout(id);
+        console.log("타이머종료");
+      }
+      function reset() {
+        clearTimeout(id);
+        s_sec = end_sec = msec = sec = min = 0;
+        document.getElementById("time_disp").innerHTML = `0 min 0 sec 000 msec`;
+        ms.style.transform = `translate(-50%) rotate(0deg)`;
+        ss.style.transform = `translate(-50%) rotate(0deg)`;
+        recDisp.innerHTML = "[기록]";
+        // const li = document.querySelector("li");
+        // const parent = li.parentElement;
+        // parent.querySelectorAll("li").forEach((v) => v.remove());
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 390vh;
+      }
+      section {
+        height: 95vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        color: burlywood;
+        background-color: beige;
+      }
+      section:nth-of-type(even) {
+        background-color: rgb(220, 232, 247);
+        color: cadetblue;
+      }
+      .scroll-text {
+        position: fixed;
+        top: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.6rem;
+        font-weight: bold;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.413);
+        padding: 10px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.scroll-text#scrollText{처음이에요. 스크롤을 내려보세요.} -->
+    <div class="scroll-text" id="scrollText">
+      처음이에요. 스크롤을 내려보세요.
+    </div>
+
+    <!-- section{$단계}*5 -->
+    <section>1단계</section>
+    <section>2단계</section>
+    <section>3단계</section>
+    <section>4단계</section>
+    <section>End</section>
+
+    <script>
+      const scollText = document.getElementById("scrollText");
+
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        console.log(scrollY);
+        /* 스크롤 위치에 따른 텍스트를 변경 */
+        if (scrollY < 900) {
+          scollText.textContent = "아래로 스크롤을 내려보세요.";
+        } else if (scrollY < 1700) {
+          scollText.textContent = "지금은 2단계 입니다.";
+        } else if (scrollY < 2500) {
+          scollText.textContent = "지금은 3단계 입니다.";
+        } else if (scrollY < 3200) {
+          scollText.textContent = "지금은 4단계 입니다.";
+        } else if (scrollY < 3700) {
+          scollText.textContent = "마지막 구간이에요.";
+        }
+      });
+    </script>
+  </body>
+</html>

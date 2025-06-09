@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgb(203, 203, 230);
+        padding: 30px;
+        margin: 0;
+      }
+      h2 {
+        text-align: center;
+      }
+      .planner {
+        /* border: 1px solid black; */
+        max-width: 450px;
+        margin: auto;
+        border-radius: 20px;
+        background-color: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+      }
+      .hour-block {
+        display: flex;
+        /* gap: 10px; */
+        border: 1px solid #ccc;
+      }
+      .time {
+        width: 80px;
+        background-color: #e6ecfa;
+        text-align: center;
+        line-height: 57px;
+        font-weight: bold;
+      }
+      .task {
+        flex-grow: 1;
+        padding: 15px;
+        background-color: white;
+      }
+      .hour-block:hover .task {
+        background-color: rgb(102, 133, 161);
+        color: white;
+      }
+      .hour-block:hover .time {
+        background-color: rgb(28, 155, 106);
+        color: white;
+      }
+      .hour-block:last-of-type {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- h2+div.planner>(div.hour-block>div.time{0$:00}+div.task{상세 내용})*7 -->
+    <h2>My Daily Schedule</h2>
+    <div class="planner">
+      <div class="hour-block">
+        <div class="time">01:00</div>
+        <div class="task">팀별 목표 설정 및 일정 조율</div>
+      </div>
+      <div class="hour-block">
+        <div class="time">02:00</div>
+        <div class="task">필수 소프트웨어 설치 및 테스트</div>
+      </div>
+      <div class="hour-block">
+        <div class="time">03:00</div>
+        <div class="task">초기 디자인 검토 및 피드백 반영</div>
+      </div>
+      <div class="hour-block">
+        <div class="time">04:00</div>
+        <div class="task">핵심 기능 구현 및 코드 리뷰 진행</div>
+      </div>
+      <div class="hour-block">
+        <div class="time">05:00</div>
+        <div class="task">진행 상황 공유 및 문제 해결 논의</div>
+      </div>
+      <div class="hour-block">
+        <div class="time">06:00</div>
+        <div class="task">주요 기능 테스트 및 버그 수정</div>
+      </div>
+      <div class="hour-block">
+        <div class="time">07:00</div>
+        <div class="task">문서 정리 및 발표 자료 제작</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      h1 {
+        border-bottom: 1.5px solid white;
+        padding-bottom: 10px;
+      }
+      span {
+        padding: 5px;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      a:active {
+        color: rgb(255, 226, 226);
+        border: 1px solid red;
+      }
+      a:visited {
+        color: #ccc;
+      }
+      body {
+        background: url(./img/배경.jpeg) no-repeat;
+        background-size: cover;
+      }
+
+      @media (min-width: 601px) and (max-width: 1000px) {
+        h1 {
+          text-decoration: none;
+          color: rgb(255, 24, 24);
+        }
+        body {
+          color: white;
+          background: url("https://images.pexels.com/photos/38136/pexels-photo-38136.jpeg")
+            no-repeat;
+          background-size: cover;
+        }
+      }
+      @media (max-width: 600px) {
+        h1 {
+          text-decoration: none;
+          color: rgb(224, 231, 235);
+          font-size: 3rem;
+        }
+        body {
+          color: white;
+          background: url("http://t1.daumcdn.net/brunch/service/guest/image/PMDMIJW8MuTlmn0vnoXpKHp4-QQ.JPG")
+            no-repeat;
+          background-size: cover;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Emotion</h1>
+    <span><a href="#">SAD</a></span>
+    <span><a href="#">ANGRY</a></span>
+    <span><a href="#">HAPPY</a></span>
+    <span><a href="#">LOVE</a></span>
+  </body>
+</html>

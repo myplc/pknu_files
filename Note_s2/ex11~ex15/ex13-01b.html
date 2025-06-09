@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <style>
+      div {
+        padding: 0;
+        margin: 45% auto;
+        background: url("https://velog.velcdn.com/images/tybnasgo/post/da35b632-9aad-4c3c-9a3b-e0d99f789530/image.gif");
+        width: 145px;
+        height: 155px;
+      }
+      .zzi {
+        background-position: -134px 0;
+      }
+      .bba {
+        background-position: -280px 0;
+        width: 160px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      const now = dayjs();
+      const random = now.get("ms") % 3;
+      console.log(random);
+
+      if (random == 0) {
+        document.body.innerHTML = `<div class=""></div>`;
+      } else if (random == 1) {
+        document.body.innerHTML = `<div class="zzi"></div>`;
+      } else {
+        document.body.innerHTML = `<div class="bba"></div>`;
+      }
+    </script>
+  </body>
+</html>

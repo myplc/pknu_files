@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>랜덤고급</title>
+    <script>
+      const array = new Uint8Array(2);
+      crypto.getRandomValues(array);
+      console.log(array);
+      const ran1 = Math.floor((array[0] / 255) * 100); // 100까지 수, 즉 100도 나옴
+      const ran2 = (array[1] % 100) + 1; // 1에서 100까지
+      console.log("오늘의 행운의 수:");
+      console.log(ran1, ran2);
+    </script>
+  </head>
+  <body></body>
+</html>

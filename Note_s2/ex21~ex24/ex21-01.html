@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        width: 100px;
+        margin: 0;
+        border-radius: 50%;
+        font-size: 3rem;
+        position: absolute;
+        padding: 20px 30px 30px;
+        /* transform: translate(400px, 400px); */
+        user-select: none;
+      }
+    </style>
+    <script>
+      let status = false;
+      document.addEventListener("DOMContentLoaded", () => {
+        const pac = document.createElement("img");
+
+        setInterval(() => {
+          if (status) {
+            pac.src = "./img/pac1.png";
+          } else {
+            pac.src = "./img/pac2.png";
+          }
+          status = !status;
+        }, 200);
+
+        document.body.appendChild(pac);
+
+        let x = (y = 10);
+        const step = 40;
+
+        const move = () => {
+          pac.style.left = `${x * step}px`;
+          pac.style.top = `${y * step}px`;
+        };
+        move(); // 최초로딩
+        window.addEventListener("keydown", (event) => {
+          if (event.key == "ArrowLeft") {
+            x -= 1;
+            pac.style.transform = "scaleX(-1)";
+          }
+          if (event.key == "ArrowRight") {
+            x += 1;
+            pac.style.transform = "scaleX(1)";
+          }
+          if (event.key == "ArrowUp") {
+            y -= 1;
+            pac.style.transform = "rotate(270deg) ";
+          }
+
+          if (event.key == "ArrowDown") {
+            y += 1;
+            pac.style.transform = "rotate(90deg)";
+          }
+          console.log(event.key);
+          move();
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

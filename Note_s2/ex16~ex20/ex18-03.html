@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function pt(name = "없어") {
+        console.log(name + "안녕??");
+      }
+      setTimeout(function () {
+        pt("홍길동");
+      }, 1000);
+      setTimeout(() => pt("홍"), 2000);
+      setTimeout(pt, 3000);
+    </script>
+  </head>
+  <body>
+    <h1>저는 곧 변합니다.</h1>
+    <script>
+      /* 방식1 */
+      const cg = () => {
+        const h1 = document.querySelector("h1");
+        h1.textContent = "방식1로 변했어요!";
+      };
+      setTimeout(cg, 2000);
+      /* 방식2 */
+      setTimeout(
+        () => (document.querySelector("h1").textContent = "방식2로 변했어요!"),
+        3000
+      );
+      /* 방식3 - 인자넣기 */
+      const cc = (text) => {
+        const h1 = document.querySelector("h1");
+        h1.textContent = text;
+      };
+      setTimeout(() => cc("우와!!!"), 4000);
+      setTimeout(() => cc("드디어~"), 5000);
+      setTimeout(() => cc("변했다."), 6000);
+      /* 방식4 - 인자넣기 */
+      setTimeout(cc, 7000, "ㅋㅋㅋ");
+      setTimeout(cc, 8000, "또");
+      setTimeout(cc, 9000, "변할까?");
+    </script>
+  </body>
+</html>

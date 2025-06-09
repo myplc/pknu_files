@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      } */
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: cornflowerblue;
+        animation: mymove 2s ease-in-out infinite;
+      }
+
+      @keyframes mymove {
+        0% {
+          transform: translate(0);
+        }
+
+        25% {
+          transform: translate(500px, 0);
+        }
+        60% {
+          transform: translate(500px, 500px);
+        }
+        80% {
+          transform: translate(0, 500px);
+        }
+        100% {
+          transform: translate(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

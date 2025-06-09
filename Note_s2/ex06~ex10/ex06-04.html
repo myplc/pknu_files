@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        width: 1100px;
+        height: 700px;
+        margin: 50px auto;
+        border: 1px solid #ccc;
+      }
+      .box {
+        width: 300px;
+        height: 300px;
+        margin: 20px;
+        border: 1px solid coral;
+        float: left;
+        background: url("https://img.freepik.com/premium-photo/a-crashed-plane-illustration_889227-21169.jpg")
+          no-repeat left top;
+      }
+      #bg1 {
+        background-size: auto;
+      }
+      #bg2 {
+        background-size: 200px;
+      }
+      #bg3 {
+        background-size: 50%;
+      }
+      #bg4 {
+        background-size: 100% 100%;
+      }
+      #bg5 {
+        background-size: contain;
+      }
+      #bg6 {
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div#container>div.box#bg$*6 -->
+    <div id="container">
+      <div class="box" id="bg1"></div>
+      <div class="box" id="bg2"></div>
+      <div class="box" id="bg3"></div>
+      <div class="box" id="bg4"></div>
+      <div class="box" id="bg5"></div>
+      <div class="box" id="bg6"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /* 어레이 정렬 */
+      const arr = [4, 5, 6, 7, 81, 13, 16, 18, 45, 2, 3];
+      const str = ["banana", "apple", "kiwi", "melon", "cherry"];
+      console.log(1, arr);
+      arr.sort((a, b) => a - b);
+      console.log(2, arr);
+      console.log(3, str);
+      str.sort();
+      console.log(4, str);
+      /* 객체정렬 */
+      const user = [
+        { name: "홍길동", age: 27 },
+        { name: "슈퍼맨", age: 14 },
+        { name: "배트맨", age: 35 },
+      ];
+      user.sort((a, b) => a.age - b.age);
+      console.log(user);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const a = 123.45678;
+      console.log(a.toFixed(1));
+      console.log(a.toFixed(2));
+      console.log(a.toFixed(3));
+      console.log(a.toFixed(4));
+      const b = Number("안녕");
+      console.log("isNaN:", Number.isNaN(b));
+      const c = 10 / 0;
+      console.log("isFinite:", Number.isFinite(123));
+      console.log("isFinite:", Number.isFinite(c));
+      console.log("infinity?:", c === Infinity);
+    </script>
+  </head>
+  <body></body>
+</html>

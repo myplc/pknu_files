@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>falsy , nullish coalescing</title>
+    <script>
+      const a1 = null;
+      const a2 = undefined;
+      const a3 = false;
+      const a4 = "1234";
+
+      /* Falsy */
+      console.log("========= Falsy =========");
+      console.log(a1 || "제가 대신왔어요.");
+      console.log(a2 || "나도 대신왔어요.");
+      console.log(a3 || "전에 대신왔어요.");
+      console.log(a4 || "저는...왜...");
+
+      /* 병합 연산자 */
+      /* 잡아내서 뒤에 값으로 대체 */
+      console.log("=== nullish coalescing ===");
+      console.log(a1 ?? "제가 대신왔어요."); // null 과 undefined를 잡아냄
+      console.log(a1 ?? 0); // null 과 undefined를 잡아냄
+      console.log(a2 ?? "나도 대신왔어요."); // null 과 undefined를 잡아냄
+      console.log(a2 ?? 0); // null 과 undefined를 잡아냄
+      console.log(a3 ?? "전에 대신왔어요.");
+      console.log(a4 ?? "저는...왜...");
+    </script>
+  </head>
+  <body></body>
+</html>

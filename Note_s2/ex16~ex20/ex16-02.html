@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      fn2(); // 에러없이 실행가능, 호이스팅됨
+
+      const fn1 = function () {
+        console.log("fn1");
+      };
+      fn1(); // 선언후 사용가능
+
+      function fn2() {
+        console.log("fn2");
+      }
+    </script>
+  </body>
+</html>

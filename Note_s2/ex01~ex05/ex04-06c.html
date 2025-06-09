@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>형제 선택자</title>
+    <style>
+      p {
+        background-color: antiquewhite;
+      }
+      h3 + p {
+        color: rgb(129, 19, 255);
+      }
+      h3 ~ p {
+        border: 1px solid red;
+      }
+      ul p {
+        background-color: coral;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>엑스포 안내</h3>
+    <p>반갑습니다.</p>
+    <span>난 신경쓰지마</span>
+    <p>책자를 배부하고 있습니다.</p>
+    <p>안내데스크를 활용하시기 바랍니다.</p>
+    <!-- ul>(li>p)*2^^p{9월에는 가을 이벤트가 시작됩니다.} -->
+    <ul>
+      <li>
+        <p>주중에는 정오 이벤트가 있습니다.</p>
+      </li>
+      <li>
+        <p>주말에는 자정 이벤트가 있습니다.</p>
+      </li>
+    </ul>
+    <p>9월에는 가을 이벤트가 시작됩니다.</p>
+  </body>
+</html>

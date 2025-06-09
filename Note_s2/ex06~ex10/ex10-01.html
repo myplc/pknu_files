@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px;
+        height: 100%;
+      }
+      label {
+        background-color: cadetblue;
+        color: white;
+        margin: 20px;
+        padding: 30px 50px 40px;
+        border-radius: 20px;
+        font-size: 5rem;
+      }
+      input {
+        display: none;
+      }
+      #btn {
+        border-radius: 10px;
+        width: 100px;
+        background-color: burlywood;
+        padding: 10px;
+        color: white;
+        border: none;
+        font-weight: bold;
+        font-size: 1.3rem;
+        cursor: pointer;
+      }
+      #btn:disabled {
+        background-color: #676262;
+        color: #999;
+        cursor: help;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- multiple 가능 -->
+    <label for="fileinput">+</label>
+    <input type="file" id="fileinput" />
+    <button id="btn">전송</button>
+    <script>
+      const btn = document.querySelector("#btn");
+      const inp = document.querySelector("#fileinput");
+
+      const btnAct = () => (btn.disabled = false);
+      const btnDis = () => (btn.disabled = true);
+
+      inp.addEventListener("change", () => {
+        console.log(inp.files[0].name, inp.files[0].size);
+        if (inp.files[0].size > 3 * 1024 * 1024) {
+          alert("파일의 용량이 3M를 초과하였습니다.");
+          btnDis();
+        } else {
+          alert("파일이 정상적으로 업로드 준비되었습니다.");
+          btnAct();
+        }
+      });
+    </script>
+  </body>
+</html>

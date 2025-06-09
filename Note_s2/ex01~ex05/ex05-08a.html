@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 400px;
+        height: 250px;
+        border: 20px solid rgba(200, 200, 0, 0.5);
+        padding: 20px;
+        margin-bottom: 20px;
+        background: url(https://cdn-icons-png.flaticon.com/512/1792/1792997.png)
+          no-repeat top right / 30%;
+      }
+      #bg1 {
+        background-origin: padding-box;
+      }
+      #bg2 {
+        background-origin: border-box;
+      }
+      #bg3 {
+        background-origin: content-box;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- (div#bg$>h2{행복을 위해서라면}+h3{시간을 벌자, 돈도 벌고}+p{lorem25})*3 -->
+    <div id="bg1">
+      <h2>행복을 위해서라면</h2>
+      <h3>시간을 벌자, 돈도 벌고</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem,
+        possimus illo blanditiis aliquid quia alias nobis quos vero, esse
+        nostrum minus repellendus saepe suscipit dolorum.
+      </p>
+    </div>
+    <div id="bg2">
+      <h2>행복을 위해서라면</h2>
+      <h3>시간을 벌자, 돈도 벌고</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        suscipit architecto recusandae mollitia, voluptas itaque dolorum quaerat
+        eaque! Quam perspiciatis molestiae quasi at a consequuntur!
+      </p>
+    </div>
+    <div id="bg3">
+      <h2>행복을 위해서라면</h2>
+      <h3>시간을 벌자, 돈도 벌고</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident
+        doloribus dolorem minus distinctio, dicta aperiam eos voluptatem quaerat
+        consequatur voluptatum quas debitis ducimus perferendis in!
+      </p>
+    </div>
+  </body>
+</html>

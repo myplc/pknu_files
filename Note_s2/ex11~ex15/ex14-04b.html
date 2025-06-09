@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const array = [11, 22, 33, 44, 55, 66, 77];
+
+      const inp = +prompt("찾는 배열을 입력하세요.");
+      const choice = array.indexOf(inp);
+
+      /* 찾는 값의 인덱스를 반환 , 없으면 -1을 반환 */
+      if (choice == -1) {
+        console.log("요소가 없습니다.");
+      } else {
+        console.log(`${choice}번째 인덱스로 ${array[choice]} 값이 있습니다.`);
+      }
+      /* incluedes는 ture or false만 반환 */
+      const choice2 = array.includes(inp);
+      if (choice2) {
+        console.log("요소가 있습니다.");
+      } else {
+        console.log("요소가 없습니다.");
+      }
+
+      /* 찾는값 그대로를 반환 , 없으면 undefinded */
+      const choice3 = array.find((v) => v === inp);
+      console.log(choice3);
+      const choice4 = array.findIndex((v) => v == inp);
+      console.log(choice4);
+    </script>
+  </head>
+  <body></body>
+</html>

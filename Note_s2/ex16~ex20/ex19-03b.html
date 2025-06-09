@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메소드체이닝</title>
+    <script>
+      const num = Array(100)
+        .fill(0)
+        .map((v, i) => i);
+      console.log(num);
+
+      num
+        .filter((v) => v % 3 === 0)
+        .map((v) => v * v)
+        .forEach((v, i) => console.log(`${i + 1}:${v}`));
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+      thead,
+      tfoot {
+        position: sticky;
+        color: rgb(255, 255, 255);
+        background-color: rgb(39, 114, 158);
+        z-index: 5;
+      }
+      thead {
+        top: -1px;
+      }
+      tfoot {
+        bottom: -1px;
+      }
+      .table-wrapper {
+        max-height: 200px;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.table-wrapper>table>thead>tr>th*4^^tbody>(tr>td*4)*10^^tfoot>tr>td*4 -->
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>나이</th>
+            <th>직업</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>홍길동</td>
+            <td>25</td>
+            <td>개발자</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>이순신</td>
+            <td>30</td>
+            <td>설계자</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>강감찬</td>
+            <td>30</td>
+            <td>조폭</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>슈바이저</td>
+            <td>17</td>
+            <td>의사</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>마리오</td>
+            <td>22</td>
+            <td>탐험가</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>아서왕</td>
+            <td>33</td>
+            <td>조련사</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>핀볼</td>
+            <td>17</td>
+            <td>구슬치기</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>공유</td>
+            <td>22</td>
+            <td>딱지치기</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>고수</td>
+            <td>18</td>
+            <td>비누맛</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>부경대</td>
+            <td>22</td>
+            <td>용산지기</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">테이블 풋터</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>주기 타이머 동작</button>
+    <button>주기 타이머 정지</button>
+    <button>화면지우기</button>
+    <button>알림창 버튼</button>
+    <button>console에 찍는 버튼</button>
+    <div></div>
+    <script>
+      let timeId;
+      const btn = document.querySelectorAll("button");
+      const div = document.querySelector("div");
+      console.log(btn[0], typeof btn, Array.isArray(btn));
+      const timeOn = () => {
+        let num = 1;
+        timeId = setInterval(() => {
+          div.innerHTML += `${num++}회째 계속진행중...<br>`;
+        }, 1000);
+      };
+      const timeOff = () => {
+        clearInterval(timeId);
+      };
+      const clearDoc = () => (div.innerHTML = "");
+      btn[0].addEventListener("click", timeOn);
+      btn[1].addEventListener("click", timeOff);
+      btn[2].addEventListener("click", clearDoc);
+      btn[3].addEventListener("click", () => alert("가짜버튼1"));
+      btn[4].addEventListener("click", () => console.log("가짜버튼2"));
+
+      /* 유사배열을 진짜배열로 바꾸기 */
+      const realArray = Array.from(btn);
+      console.log(realArray, Array.isArray(realArray));
+      /* 주기타이머 테스트 온 / 오프동작 */
+      //   const fn1 = () => document.write("반가워요.<hr>");
+      //   const t1 = setInterval(fn1, 1000);
+      //   console.log(t1);
+      //   setTimeout(clearInterval, 5000, t1);
+      //   setTimeout(() => clearInterval(t1), 5000);
+      //   clearTimeout;
+    </script>
+  </body>
+</html>

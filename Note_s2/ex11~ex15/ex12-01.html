@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>입력받기</title>
+    <script>
+      const name = prompt("당신은 누구인가요?", "이름을 적어주세요.");
+      console.log(name + "님 안녕하세요.");
+      alert(`${name}님 안녕하세요 :)`);
+      name !== "관리자" ||
+        document.write(`<h2> 위대한 관리자님 ! 어서오세요!</h2>`);
+      name == "관리자" ||
+        document.write(`<h2>${name}님 께서 입장하셨습니다.</h2>`);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        /* border-collapse: collapse; */
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        margin: auto;
+      }
+      th,
+      tr,
+      td {
+        /* border: 1px solid blue; */
+        padding: 5px 10px;
+        background-color: rgb(255, 246, 242);
+      }
+      tr:nth-of-type(even) td {
+        background-color: rgb(214, 233, 241);
+      }
+      h2 {
+        text-align: center;
+      }
+      th {
+        background-color: rgb(35, 144, 163);
+        color: white;
+      }
+      td:nth-of-type(3) {
+        color: rgb(99, 99, 255);
+        box-shadow: 0 0 10px;
+      }
+    </style>
+    <script>
+      let list = "";
+      list += "<ul>";
+      list += "<li>Hello 반갑다는 뜻이야!</li>";
+      list += "<li>Javascript 로 작성되었어.</li>";
+      list += "</ul>";
+      list += "<h2>&& and </h2>";
+      list += '<table class="a">';
+      list += "<tr><th>좌변</th><th>우변</th><th>결과</th></tr>";
+      list += "<tr><td>false</td><td>false</td><td>false</td></tr>";
+      list += "<tr><td>true</td><td>false</td><td>false</td></tr>";
+      list += "<tr><td>false</td><td>true</td><td>false</td></tr>";
+      list += "<tr><td>true</td><td>true</td><td>true</td></tr>";
+      list += "</table>";
+      list += "<h2>|| or </h2>";
+      list += '<table class="a">';
+      list += "<tr><th>좌변</th><th>우변</th><th>결과</th></tr>";
+      list += "<tr><td>false</td><td>false</td><td>false</td></tr>";
+      list += "<tr><td>true</td><td>false</td><td>true</td></tr>";
+      list += "<tr><td>false</td><td>true</td><td>true</td></tr>";
+      list += "<tr><td>true</td><td>true</td><td>true</td></tr>";
+      list += "</table>";
+      document.write(list);
+    </script>
+  </head>
+  <body></body>
+</html>

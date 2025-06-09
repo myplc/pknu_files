@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const todos = ["우유구매", "업무메일", "필라테스"];
+      console.log(todos);
+      todos.push("저녁준비");
+      console.log(todos);
+      /* 1번 인덱스부터 2개를 삭제 */
+      //   todos.splice(1, 2);
+      /* 2번 인덱스부터 요소들을 추가, 0이면 추가 */
+      todos.splice(2, 0, "간식먹기", "하품하기", "잠오기", "게임하기");
+
+      console.log(todos);
+    </script>
+  </head>
+  <body></body>
+</html>

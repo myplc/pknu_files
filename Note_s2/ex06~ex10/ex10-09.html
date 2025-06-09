@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid 레이아웃</title>
+    <style>
+      :root {
+        --myb1: rgb(124, 124, 214);
+        --myb2: rgb(183, 183, 245);
+        --myb3: rgb(218, 218, 243);
+        --myg1: rgb(110, 196, 132);
+        --myg2: rgb(174, 240, 190);
+        --myg3: rgb(255, 255, 255);
+        --myr1: rgb(252, 114, 114);
+        --myr2: rgb(240, 174, 174);
+        --myr3: rgb(236, 210, 210);
+      }
+      div {
+        margin: 3px;
+        border: 2px solid #999;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+      }
+      .wrap {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 100px 200px 100px;
+      }
+      #grid1 {
+        background-color: var(--myb1);
+        grid-column-start: 1;
+        grid-column-end: 3;
+        /* grid-row-start: 1; */
+        /* grid-row-end: 2; */
+      }
+      #grid2 {
+        background-color: var(--myb2);
+        grid-column-start: 3;
+        grid-column-end: 4;
+        /* grid-row-start: 1; */
+        /* grid-row-end: 2; */
+      }
+      #grid3 {
+        background-color: var(--myg1);
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 4;
+      }
+      #grid4 {
+        background-color: var(--myg2);
+        grid-column-start: 2;
+        grid-column-end: 4;
+      }
+      #grid5 {
+        background-color: var(--myr1);
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+      #grid6 {
+        background-color: var(--myr2);
+        grid-column-start: 3;
+        grid-column-end: 4;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.wrap>div#grid${GRID$}*6 -->
+    <div class="wrap">
+      <div id="grid1">GRID1</div>
+      <div id="grid2">GRID2</div>
+      <div id="grid3">GRID3</div>
+      <div id="grid4">GRID4</div>
+      <div id="grid5">GRID5</div>
+      <div id="grid6">GRID6</div>
+    </div>
+  </body>
+</html>

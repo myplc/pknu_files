@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for 들의 속도를 테스트</title>
+    <script>
+      const oriTime = 10 * 1000 * 1000;
+      const arr = Array(oriTime)
+        .fill(0)
+        .map((v, i) => i);
+
+      console.time("for - 10000000");
+      for (let i = 0; i < oriTime; i++) {}
+      console.timeEnd("for - 10000000");
+      console.time("for - arr.length");
+      for (let i = 0; i < arr.length; i++) {}
+      console.timeEnd("for - arr.length");
+      console.time("(var)for - arr.length");
+      for (var i = 0; i < arr.length; i++) {}
+      console.timeEnd("(var)for - arr.length");
+      console.time("(reverse)for - arr.length");
+      const cnt = arr.length;
+      for (let i = cnt; i > 0; i--) {}
+      console.timeEnd("(reverse)for - arr.length");
+      console.time("forEach : function");
+      arr.forEach(function (v, i) {});
+      console.timeEnd("forEach : function");
+      console.time("forEach : =>");
+      arr.forEach((v, i) => {});
+      console.timeEnd("forEach : =>");
+      console.time("for-of");
+      for (const v of arr) {
+      }
+      console.timeEnd("for-of");
+      console.time("for-in");
+      for (const i in arr) {
+      }
+      console.timeEnd("for-in");
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /* 1부터 100까지 1씩 증가하는 배열을 만들어라 */
+      const arr = Array(100)
+        .fill(0)
+        .map((v, i) => i + 1);
+      console.log(arr);
+
+      /* 그중에서 홀수만 배열로 뽑아내라 */
+      const ft = (v) => v % 3 === 0;
+      const odd = arr.filter(ft);
+      console.log(odd);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr = [
+        "딸기",
+        "바나나",
+        "사과",
+        "수박",
+        "배",
+        "키위",
+        "복숭아",
+        "포도",
+      ];
+
+      // inp1 "${arr} 중 제거하고 싶은 품목을 입력하세요."
+      const delItem = prompt(`${arr} 중 제거하고 싶은 품목을 입력하세요.`);
+      const delIndex = arr.indexOf(delItem);
+      if (delIndex !== -1) {
+        arr.splice(delIndex, 1);
+      } else {
+        // (추가1). 목록에 없다면 없다고 알려주기
+        alert("해당 품목이 목록에 없습니다.");
+      }
+      // inp2 "${arr} 외에 추가하고 싶은 품목을 입력하세요."
+      const addItem = prompt(`${arr} 외에 추가하고 싶은 품목을 입력하세요.`);
+      // (추가2). 목록에 있다면 이미 있다고 알려주기
+      if (arr.includes(addItem)) {
+        alert("이미 목록에 있는 품목입니다.");
+      } else {
+        arr.push(addItem);
+      }
+      // innerHTML 제거하고 추가하고 정리된 품목은 arr 입니다.
+      document.body.innerHTML = `<h1>과일목록관리</h1><h2>정리된 품목은 ${arr}입니다.</2>`;
+    </script>
+  </body>
+</html>

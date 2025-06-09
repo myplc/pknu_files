@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #3e3e3eba;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .login-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        width: 300px;
+      }
+      h2 {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      input {
+        width: 93%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(62, 62, 255);
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        margin: 10px 0;
+      }
+      button:hover {
+        background-color: rgb(44, 44, 173);
+      }
+      button:last-of-type {
+        background-color: rgb(94, 170, 246);
+      }
+      button:last-of-type:hover {
+        background-color: rgb(62, 113, 163);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.login-container>h2{로그인}+form>(label+input)*2+button+hr+button -->
+    <div class="login-container">
+      <h2>로그인</h2>
+      <form
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf8SoM3vffmbIgdsGf1W9MUOnJSu_G3Hip4d7tLlnyECHMFOw/formResponse"
+        method="post"
+      >
+        <label for="id">ID:</label>
+        <input
+          type="text"
+          placeholder="아이디입력"
+          id="id"
+          name="entry.1540946831"
+          required
+        />
+        <label for="pw">Password:</label>
+        <input
+          type="password"
+          id="pw"
+          placeholder="비밀번호입력"
+          name="entry.677900109"
+          required
+        />
+        <button>로그인</button>
+        <hr />
+        <small>회원이 아니신 분은 회원가입을 해주세요.</small>
+        <button>가입하기</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 300px;
+        height: 400px;
+        border: 5px solid #000;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .container > div {
+        background-color: #0a677f;
+        width: 100px;
+        height: 100px;
+        /* border: 1px solid red; */
+        /* box-sizing: border-box; */
+        color: white;
+      }
+      .container > div:nth-of-type(2),
+      .container > div:nth-of-type(5) {
+        align-self: end;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.container>div*6 -->
+    <div class="container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+    </div>
+  </body>
+</html>

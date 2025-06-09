@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const n1 = "123";
+      const n2 = 456;
+      const n3 = "1000";
+      const n4 = "안녕";
+      console.log(n1 + n2); // 숫자를 문자로 바꿔서 연산
+      console.log(n1 * 3); // 문자를 숫자로 바꿔서 연산
+      console.log(n3 * 10); // 문자를 숫자로 바꿔서 연산
+      console.log(n4 * 3); // not a numnber
+      console.log(n4 + n1 + n2); // 모두 문자로 바꿔서 연산
+      console.log(n1 * n2 * n3); // 모두 숫자로 바꿔서 연산
+
+      console.log(Number(n1) + n2);
+      console.log(n4 + n1 + String(n2));
+
+      /* 파이썬의 경우
+       int(n1) -> 숫자
+       str(n2) -> 문자 */
+
+      /* js 팁 */
+      console.log(n1 * 1); // 곱하기 1은 숫자가 됨.
+      console.log(n2 + ""); // 빈따옴표를 더하면 문자가됨.
+    </script>
+  </head>
+  <body></body>
+</html>

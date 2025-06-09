@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        height: 900px;
+        font-size: 2rem;
+        /* px , % , vh, vw*/
+      }
+      tr,
+      td {
+        border: 1px solid #ccc;
+      }
+      #nav {
+        height: 10%;
+        background-color: cadetblue;
+      }
+      #header,
+      #footer {
+        height: 15%;
+        background-color: aquamarine;
+      }
+      .main-aside {
+        background-color: rgb(233, 205, 194);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- table>(tr>td*2)*4 -->
+    <table>
+      <!-- colgroup>col*2 -->
+      <colgroup>
+        <col style="width: 70%" />
+        <col />
+      </colgroup>
+      <tr id="header">
+        <td colspan="2">header</td>
+      </tr>
+      <tr id="nav">
+        <td colspan="2">nav</td>
+      </tr>
+      <tr class="main-aside">
+        <td style="background-color: greenyellow">
+          main
+          <hr />
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus,
+          amet. Numquam nam totam velit alias, magni, expedita aliquid maiores
+          esse, rem excepturi vel quo. Laborum delectus, quae eius tempora et
+          esse voluptates fuga voluptate sunt.
+        </td>
+        <td>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque
+          quaerat in praesentium, corporis iure facere pariatur nihil iusto fuga
+          a!
+        </td>
+      </tr>
+      <tr id="footer">
+        <td colspan="2">footer</td>
+      </tr>
+    </table>
+  </body>
+</html>

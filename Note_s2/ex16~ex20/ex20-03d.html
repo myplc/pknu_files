@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const h1 = document.createElement("h1");
+        const div = document.createElement("div");
+        h1.textContent = "키보드 이벤트 감지 중...";
+        div.classList.add("event-log");
+        document.body.appendChild(h1);
+        document.body.appendChild(div);
+
+        const printKey = (event) => {
+          let list = "";
+          list += `<b>이벤트타입:</b>${event.type}<br/>`;
+          list += `<b>Key:</b>${event.key}<br />`;
+          list += `<b>Code:</b>${event.code}<br />`;
+          list += `<b>AltKey:</b>${event.altKey}<br />`;
+          list += `<b>CtrlKey:</b>${event.ctrlKey}<br />`;
+          list += `<b>ShiftKey:</b>${event.shiftKey}<br />`;
+          list += `<b>keyCode(old):</b>${event.keyCode}<br />`;
+          div.innerHTML = list;
+        };
+        document.addEventListener("keydown", printKey);
+        document.addEventListener("keyup", printKey);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

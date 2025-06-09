@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        margin: 0;
+        background-color: darksalmon;
+        border-radius: 50%;
+        font-size: 3rem;
+        position: absolute;
+        padding: 20px 30px 30px;
+        transform: translate(200px, 400px);
+        user-select: none;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const star = document.createElement("h1");
+        star.innerHTML = `⭐`;
+        document.body.appendChild(star);
+
+        let x = (y = 0);
+        const step = 40;
+
+        const move = () => {
+          star.style.left = `${x * step}px`;
+          star.style.top = `${y * step}px`;
+        };
+        window.addEventListener("keydown", (event) => {
+          if (event.key == "ArrowLeft") x -= 1;
+          if (event.key == "ArrowRight") x += 1;
+          if (event.key == "ArrowUp") y -= 1;
+          if (event.key == "ArrowDown") y += 1;
+          console.log(event.key);
+          move();
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

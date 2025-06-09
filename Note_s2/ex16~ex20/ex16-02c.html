@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 호이스팅이 되는 var 은 먼저 호출해도 에러가 안남
+      // 호이스팅이 안되는 const , let 먼저 호출하면 에러남
+      // const, let은 스코프를 벗어나면 사라짐, 로컬적임
+
+      function myscope() {
+        const a = "나는 var의 a 입니다.";
+        console.log(a);
+
+        {
+          var b = "나는 var의 b 입니다.";
+          let c = "나는 var의 c 입니다.";
+        }
+        console.log(b);
+        console.log(c);
+      }
+      console.log(a);
+      myscope();
+    </script>
+  </body>
+</html>

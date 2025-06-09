@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        /* border-collapse: collapse; */
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        margin: auto;
+      }
+      th,
+      tr,
+      td {
+        /* border: 1px solid blue; */
+        padding: 5px 10px;
+        background-color: rgb(255, 246, 242);
+      }
+      tr:nth-of-type(even) td {
+        background-color: rgb(214, 233, 241);
+      }
+    </style>
+    <script>
+      const inp = prompt("원하는 값을 입력하세요.");
+      let list = ``;
+      list += `<table>`;
+      list += `  <tr>`;
+      list += `    <th colspan="2">구구단 ${inp}단</th>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp} x 1</td>`;
+      list += `    <td> ${inp * 1} </td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp} x 2</td>`;
+      list += `    <td>${inp * 2}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp} x 3</td>`;
+      list += `    <td>${inp * 3}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp} x 4</td>`;
+      list += `    <td>${inp * 4}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp} x 5</td>`;
+      list += `    <td>${inp * 5}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp} x 6</td>`;
+      list += `    <td>${inp * 6}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp} x 7</td>`;
+      list += `    <td>${inp * 7}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp} x 8</td>`;
+      list += `    <td>${inp * 8}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp} x 9</td>`;
+      list += `    <td>${inp * 9}</td>`;
+      list += `  </tr>`;
+      list += `</table>`;
+      document.write(list);
+    </script>
+  </head>
+  <body>
+    <!-- table>(tr>td*2)*10 -->
+    <!-- (tr>td{6 x $}+td{6*$})*9 -->
+  </body>
+</html>

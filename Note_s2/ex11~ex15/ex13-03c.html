@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      table {
+        /* border-collapse: collapse; */
+        min-width: 200px;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        margin: auto;
+        text-align: center;
+      }
+      th,
+      tr,
+      td {
+        /* border: 1px solid blue; */
+        padding: 5px 10px;
+        background-color: rgb(255, 246, 242);
+      }
+      tr:nth-of-type(even) td {
+        background-color: rgb(214, 233, 241);
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //const inp =  prompt("원하는 값을 입력하세요.");
+      let list = "";
+      for (let j = 2; j < 10; j++) {
+        list += `<table><tr><th colspan="2">구구단 ${j}단</th></tr>`;
+
+        for (let i = 1; i < 10; i++) {
+          list += `<tr><td>${j} x ${i}</td><td> ${j * i} </td></tr>`;
+        }
+        list += `</table>`;
+      }
+
+      document.body.innerHTML = list;
+    </script>
+  </body>
+</html>

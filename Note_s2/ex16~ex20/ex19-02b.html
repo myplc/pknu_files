@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = 0;
+      const arr = Array(100)
+        .fill(0)
+        .map((v, i) => {
+          if (i >= 0 && i < 30) {
+            return 0;
+          }
+          if (i >= 30 && i < 70) {
+            return "안녕";
+          }
+          if (i >= 70 && i < 100) {
+            return ++num;
+          }
+        });
+      console.log(arr);
+    </script>
+  </body>
+</html>

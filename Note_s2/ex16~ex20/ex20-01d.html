@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const obj = {
+        문서: "접니다.",
+        a: function () {
+          setTimeout(function () {
+            console.log(1, this.문서);
+          }, 2000);
+        },
+        b: function () {
+          setTimeout(() => {
+            console.log(2, this.문서);
+          }, 2000);
+        },
+      };
+
+      obj.a();
+      obj.b();
+      console.log(3, obj.문서);
+    </script>
+  </head>
+  <body></body>
+</html>

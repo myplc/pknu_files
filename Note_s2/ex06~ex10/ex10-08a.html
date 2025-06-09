@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        background-color: azure;
+        padding: 2rem;
+      }
+      .chat-container {
+        width: 500px;
+        height: 500px;
+        margin: auto;
+        background-color: white;
+        padding: 1rem 3rem 0 4rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        transform: translateY(50%);
+      }
+      .message {
+        display: flex;
+        margin-bottom: 1.2rem;
+        align-items: end;
+      }
+      .message.bot {
+        justify-content: start;
+      }
+      .message.user {
+        justify-content: end;
+      }
+
+      .bubble {
+        max-width: 300px;
+        position: relative;
+        background-color: #e0dfdf;
+        padding: 0.7rem 2rem;
+        border-radius: 20px;
+        word-break: break-word;
+      }
+      .name {
+        font-size: 0.8rem;
+        color: #555;
+        margin: 0 10px 2px;
+      }
+      .user .bubble {
+        background-color: yellow;
+      }
+      .user .name {
+        text-align: right;
+      }
+
+      .chat-container::-webkit-scrollbar {
+        background: #e0dfdf;
+        width: 30px;
+      }
+      .chat-container::-webkit-scrollbar-thumb {
+        background: #376daa;
+        border-radius: 6px;
+      }
+      .chat-container::-webkit-scrollbar-thumb:active {
+        background: #95bb0d;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.chat-container>div.message.bot>div>div.name{myBot}+div.bubble{안녕하세요. 무엇을 도와드릴까요?}^^div.message.user>div>div.name{나}+div.bubble{Flex로 채팅화면을 만들수 있냐?} -->
+    <div class="chat-container">
+      <div class="message bot">
+        <div>
+          <div class="name">myBot</div>
+          <div class="bubble">안녕하세요. 무엇을 도와드릴까요?</div>
+        </div>
+      </div>
+      <div class="message user">
+        <div>
+          <div class="name">나</div>
+          <div class="bubble">Flex로 채팅화면을 만들수 있냐?</div>
+        </div>
+      </div>
+      <div class="message bot">
+        <div>
+          <div class="name">myBot</div>
+          <div class="bubble">
+            네, Flex를 사용하여 채팅 화면을 만들 수 있습니다! CSS의 display:
+            flex 속성을 활용하면 채팅 메시지를 정렬하고 배치하는 데 유용합니다.
+            예를 들어, 채팅 화면을 만들 때 다음과 같은 구조를 사용할 수
+            있습니다:
+          </div>
+        </div>
+      </div>
+      <div class="message user">
+        <div>
+          <div class="name">나</div>
+          <div class="bubble">
+            Flex로 구성한 채팅 화면의 스타일을 어떻게 개선할 수 있나?
+          </div>
+        </div>
+      </div>
+      <div class="message bot">
+        <div>
+          <div class="name">myBot</div>
+          <div class="bubble">
+            채팅 화면의 스타일을 개선하는 방법은 여러 가지가 있습니다. 다음과
+            같은 요소를 고려하면 더욱 깔끔하고 사용자 친화적인 디자인을 만들 수
+            있습니다.
+          </div>
+        </div>
+      </div>
+      <div class="message user">
+        <div>
+          <div class="name">나</div>
+          <div class="bubble">flex말고 grid도 설명해 줄수 있나?</div>
+        </div>
+      </div>
+      <div class="message bot">
+        <div>
+          <div class="name">myBot</div>
+          <div class="bubble">
+            네! grid를 사용하여 채팅 화면을 만들 수도 있습니다. grid는 flex와
+            달리 행과 열을 기반으로 요소를 배치할 수 있어 더욱 정교한 레이아웃을
+            만들기에 적합합니다. Grid를 활용한 채팅 화면 다음과 같은 구조를
+            사용할 수 있습니다:
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

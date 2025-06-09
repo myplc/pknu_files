@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>border-방향 색상 조절 예제</title>
+    <style>
+      body {
+        font: 14px "굴림", Gulim;
+      }
+
+      p {
+        width: 450px;
+        padding: 5px;
+        border: 5px solid #999;
+        /* 기본 테두리 */
+      }
+
+      .top-red {
+        border-top-color: red;
+      }
+
+      .right-blue {
+        border-right-color: blue;
+      }
+
+      .bottom-green {
+        border-bottom-color: green;
+      }
+
+      .left-orange {
+        border-left-color: orange;
+      }
+
+      .mix {
+        border-top-color: red;
+        border-right-color: blue;
+        border-bottom-color: green;
+        border-left-color: orange;
+      }
+
+      .transparent-left {
+        border-left-color: transparent;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>특정 방향 border 색상 변경</h2>
+
+    <p class="top-red">위쪽 테두리만 빨간색 (border-top-color)</p>
+    <p class="right-blue">오른쪽 테두리만 파란색 (border-right-color)</p>
+    <p class="bottom-green">아래쪽 테두리만 초록색 (border-bottom-color)</p>
+    <p class="left-orange">왼쪽 테두리만 주황색 (border-left-color)</p>
+    <p class="mix">네 방향 각각 다른 색상</p>
+    <p class="transparent-left">왼쪽 테두리 투명 처리</p>
+  </body>
+</html>

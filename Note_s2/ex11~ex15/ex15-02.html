@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const ran = Math.floor(Math.random() * 100);
+      let list = "";
+      if (ran < 3) {
+        list += `<h1> 3%의 확률로 유니크 아이템 출현 </h1>`;
+      } else if (ran < 13) {
+        list += `<h1> 10%의 확률로 레어아이템 아이템 출현 </h1>`;
+      } else if (ran < 43) {
+        list += `<h1> 30%의 확률로 매직아이템 아이템 출현 </h1>`;
+      } else {
+        list += `<h1> 나머지 일반 쓰레기 아이템 출현 </h1>`;
+      }
+
+      list += `<hr>랜덤수치는 ${ran} 값입니다.`;
+      document.body.innerHTML = list;
+    </script>
+  </body>
+</html>

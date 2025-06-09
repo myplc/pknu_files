@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(60, 100, 173);
+        color: white;
+        padding: 15px 30px;
+      }
+      .logo {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+      .menu {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .menu a,
+      .sidebar a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        /* line-height: 1.8rem; */
+      }
+      .container {
+        display: flex;
+        height: 90vh;
+      }
+      .sidebar {
+        background-color: rgb(73, 93, 131);
+        color: white;
+        padding: 2rem;
+        flex-basis: 180px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main {
+        flex: 1;
+        background-color: rgb(254, 254, 245);
+        padding: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.navbar>div.logo{MySite}+div.menu>a{Home}*3 -->
+    <div class="navbar">
+      <div class="logo">MySite</div>
+      <div class="menu">
+        <a href="#">Home</a><a href="#">About</a><a href="#">Contact</a>
+      </div>
+    </div>
+    <!-- div.container>div.sidebar>h2{메뉴}+a{대시보드}*3^div.main>h1{Flex 기반 대시보드}+p{페이지설명} -->
+    <div class="container">
+      <div class="sidebar">
+        <h2>메뉴</h2>
+        <a href="">대시보드</a><a href="">사용자 관리</a><a href="">설정</a>
+      </div>
+      <div class="main">
+        <h1>Flex 기반 대시보드</h1>
+        <p>
+          "Flex 기반 대시보드는 직관적인 인터페이스와 강력한 기능을 통해
+          데이터를 효과적으로 시각화하고 분석할 수 있도록 설계되었습니다. 실시간
+          데이터 처리, 맞춤형 위젯, 유연한 레이아웃을 제공하여 사용자 경험을
+          극대화하며, 다양한 산업과 비즈니스 환경에서 활용 가능합니다. 데이터
+          중심의 의사결정을 지원하는 혁신적인 솔루션을 지금 만나보세요!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

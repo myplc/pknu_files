@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const product = {
+        제품명: "망고",
+        유형: "당절임",
+        성분: "망고,설탕, 등등...",
+        원산지: "필리핀",
+        "^&*^&*&*": "특수문자",
+        arr: [11, 22, 33, 44, 5],
+        method: function () {
+          alert("저는메소드");
+        },
+      };
+
+      console.log(product.유형, product["성분"]);
+      console.log(product["^&*^&*&*"]);
+      console.log(product.arr);
+      console.log(product.method());
+    </script>
+  </head>
+  <body></body>
+</html>

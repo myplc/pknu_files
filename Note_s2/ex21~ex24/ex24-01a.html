@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 슬라이더</title>
+    <style>
+      #container {
+        /* width: 100%; */
+        max-width: 320px;
+        border: 2px solid #aaa;
+        overflow: hidden;
+        border-radius: 20px;
+        position: relative;
+      }
+      .contents {
+        display: flex;
+        transition: 0.5s ease;
+      }
+
+      .contents img {
+        width: 318px;
+        object-fit: cover;
+        border-right: 2px solid #eee;
+      }
+      #tLeft,
+      #tRight {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+      }
+      #tLeft {
+        left: 0;
+        background-color: rgba(136, 56, 27, 0);
+      }
+      #tRight {
+        right: 0;
+        background-color: rgba(50, 130, 235, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="contents">
+        <!-- <img src="https://placecats.com/330/230" alt="" />
+        <img src="https://placecats.com/350/210" alt="" />
+        <img src="https://placecats.com/360/220" alt="" />
+        <img src="https://placecats.com/360/220" alt="" />
+        <img src="https://placecats.com/360/220" alt="" />
+        <img src="https://placecats.com/360/220" alt="" />
+        <img src="https://placecats.com/370/210" alt="" /> -->
+      </div>
+      <div id="tLeft"></div>
+      <div id="tRight"></div>
+    </div>
+
+    <script>
+      const contents = document.querySelector(".contents");
+      for (let i = 0; i < 10; i++) {
+        const imgs = document.createElement("img");
+        imgs.src = `https://placecats.com/3${i}0/220`;
+        contents.appendChild(imgs);
+      }
+
+      const img = document.querySelectorAll("img");
+      const tLeft = document.getElementById("tLeft");
+      const tRight = document.getElementById("tRight");
+
+      const positions = [];
+      let imgOn = 0;
+      window.addEventListener("load", () => {
+        let pos = 0;
+        img.forEach((v, i) => {
+          positions.push(pos);
+          pos += v.offsetWidth;
+        });
+        console.log(positions);
+      });
+      const sLeft = () => {
+        if (imgOn > 0) {
+          imgOn--;
+          console.log(positions[imgOn]);
+          contents.style.transform = `translateX(-${positions[imgOn]}px)`;
+        }
+      };
+      const sRight = () => {
+        if (imgOn < positions.length - 1) {
+          imgOn++;
+          console.log(positions[imgOn]);
+          contents.style.transform = `translateX(-${positions[imgOn]}px)`;
+        }
+      };
+
+      tLeft.addEventListener("click", sLeft);
+      tRight.addEventListener("click", sRight);
+    </script>
+  </body>
+</html>

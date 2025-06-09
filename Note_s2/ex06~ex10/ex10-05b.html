@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        gap: 10px;
+        /* flex-wrap: wrap; */
+      }
+      .box {
+        /* box-sizing: border-box; */
+        flex-basis: 100px;
+        height: 100px;
+        background-color: rgb(62, 227, 180);
+        color: white;
+        text-align: center;
+        line-height: 100px;
+        font-size: 1.2rem;
+        min-width: 0;
+        /* border: 1px dotted #000000; */
+      }
+      .box1 {
+        flex-grow: 1;
+      }
+      .box2 {
+        flex-grow: 2;
+      }
+      .box3 {
+        flex-grow: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>flex-grow 예제</h3>
+    <!-- div.container>(div.box.box$)*3 -->
+    <div class="container">
+      <div class="box box1">1</div>
+      <div class="box box2">2</div>
+      <div class="box box3">3</div>
+    </div>
+  </body>
+</html>

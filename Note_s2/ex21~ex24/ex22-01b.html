@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열을 오브젝트로 표시</title>
+    <script>
+      const verb = [
+        "밥먹자",
+        "뛰놀자",
+        "공부하자",
+        "잠자자",
+        "춤추자",
+        "게임하자",
+        "사귀자",
+      ];
+      const noun = ["식사", "플레이", "스터디", "수면", "춤", "오락", "연인"];
+
+      let obj = {};
+      let obj2 = {};
+      /* 방법1 */
+      verb.forEach((v, i) => (obj[noun[i]] = verb[i]));
+      console.log(obj);
+      /* 방법2 */
+      for (let i = 0; i < verb.length; i++) {
+        obj2[noun[i]] = verb[i];
+      }
+      console.log(obj2);
+      /* 오브젝트를 배열로 */
+      const keys = Object.keys(obj);
+      console.log(keys);
+      const values = Object.values(obj);
+      console.log(values);
+      const entries = Object.entries(obj);
+      console.log(entries);
+    </script>
+  </head>
+  <body></body>
+</html>

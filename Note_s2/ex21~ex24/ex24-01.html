@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 슬라이더</title>
+    <style>
+      #container {
+        /* width: 100%; */
+        max-width: 320px;
+        border: 2px solid #aaa;
+        overflow: hidden;
+        border-radius: 20px;
+        position: relative;
+      }
+      .contents {
+        display: flex;
+        transition: 0.5s ease;
+      }
+
+      .contents img {
+        width: 318px;
+        object-fit: cover;
+        border-right: 2px solid #eee;
+      }
+
+      .controls {
+        display: flex;
+        justify-content: space-between;
+        width: 320px;
+      }
+      button {
+        background-color: rgb(68, 120, 150);
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+      }
+      button:disabled {
+        background-color: rgb(51, 43, 43);
+        color: #777;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="contents">
+        <img src="https://placecats.com/330/230" alt="" />
+        <img src="https://placecats.com/350/210" alt="" />
+        <img src="https://placecats.com/360/220" alt="" />
+        <img src="https://placecats.com/370/210" alt="" />
+      </div>
+    </div>
+    <div class="controls">
+      <button id="btn-left" onclick="sLeft()">이전</button>
+      <button id="btn-right" onclick="sRight()">다음</button>
+    </div>
+    <script>
+      const img = document.querySelectorAll("img");
+      const contents = document.querySelector(".contents");
+      const btnLeft = document.getElementById("btn-left");
+      const btnRight = document.getElementById("btn-right");
+
+      const positions = [];
+      let imgOn = 0;
+      window.addEventListener("load", () => {
+        let pos = 0;
+        img.forEach((v, i) => {
+          positions.push(pos);
+          pos += v.offsetWidth;
+        });
+        console.log(positions);
+        updateBtn();
+      });
+      const sLeft = () => {
+        if (imgOn > 0) {
+          imgOn--;
+          console.log(positions[imgOn]);
+          contents.style.transform = `translateX(-${positions[imgOn]}px)`;
+        }
+        updateBtn();
+      };
+      const sRight = () => {
+        if (imgOn < positions.length - 1) {
+          imgOn++;
+          console.log(positions[imgOn]);
+          contents.style.transform = `translateX(-${positions[imgOn]}px)`;
+        }
+        updateBtn();
+      };
+
+      const updateBtn = () => {
+        btnLeft.disabled = imgOn === 0;
+        btnRight.disabled = imgOn === positions.length - 1;
+      };
+    </script>
+  </body>
+</html>

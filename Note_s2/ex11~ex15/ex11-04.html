@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const b1 = !true;
+      const b2 = !!false;
+      const b3 = 123 == "123"; // 타입이 달라도 값이 같으면 ok
+      const b4 = 123 === "123";
+      const b5 = "사랑" > "하마";
+      console.log(b1);
+      console.log(b2);
+      console.log(b3);
+      console.log(b4);
+      console.log(b5);
+      console.log("사".charCodeAt(), "하".charCodeAt());
+
+      /* js 팁 */
+      const num1 = 123; // true
+      const num2 = 0; // false
+      const str1 = "안녕"; // true
+      const str2 = ""; //false
+
+      console.log(num1, num2);
+      console.log(Boolean(num1), Boolean(num2));
+      console.log(!!num1, !!num2);
+      console.log(str1, str2);
+      console.log(Boolean(str1), Boolean(str2));
+      console.log(!!str1, !!str2);
+    </script>
+  </head>
+  <body></body>
+</html>

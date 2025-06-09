@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>즉시실행함수(IIFE)</title>
+    <script>
+      /* 일반 함수표현식 */
+      const add = function (a, b) {
+        return a + b;
+      };
+      console.log(add(20, 7));
+      console.log(typeof add);
+
+      /* 즉시실행함수 */
+
+      const add2 = (function (a, b) {
+        return a + b;
+      })(21, 7);
+
+      console.log(add2);
+      console.log(typeof add2);
+
+      /* 즉시실행함수 test */
+      (function () {
+        console.log("과자는 즉시드세요.");
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

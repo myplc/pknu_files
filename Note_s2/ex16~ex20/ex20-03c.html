@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle&family=Gaegu&family=Gowun+Dodum&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Gowun Dodum", sans-serif;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        background-color: beige;
+        color: cornflowerblue;
+        font-weight: bold;
+        margin: 5px 0;
+        padding: 10px 20px;
+        border-radius: 10px;
+        width: 200px;
+        transition: 0.6s ease;
+        box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.6);
+      }
+      li:nth-of-type(even) {
+        background-color: cornflowerblue;
+        color: white;
+        font-weight: bold;
+      }
+      li:hover {
+        background-color: yellow;
+        width: 250px;
+      }
+      input {
+        width: 180px;
+        height: 20px;
+        margin: 10px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.589);
+        padding: 15px;
+        background-color: beige;
+      }
+      button {
+        background-color: rgb(40, 64, 128);
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.623);
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const h1 = document.createElement("h1");
+        const inp = document.createElement("input");
+        const btn = document.createElement("button");
+        const hr = document.createElement("hr");
+        const ul = document.createElement("ul");
+        document.body.append(h1, inp, btn, hr, ul);
+        // document.body.appendChild(h1);
+        // document.body.appendChild(inp);
+        // document.body.appendChild(btn);
+        // document.body.appendChild(hr);
+        // document.body.appendChild(ul);
+
+        h1.textContent = "ToDo 리스트 생성";
+        btn.textContent = "생성";
+
+        btn.addEventListener("click", () => {
+          const li = document.createElement("li");
+          ul.appendChild(li);
+          li.textContent = inp.value;
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
