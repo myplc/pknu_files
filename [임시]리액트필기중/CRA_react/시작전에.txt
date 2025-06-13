@@ -1,0 +1,7 @@
+npm i
+
+를 실행하여
+
+node_modules를 설치하고
+
+npm start 할것

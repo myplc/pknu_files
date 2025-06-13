@@ -1,6 +1,4 @@
 // .devcontainer 하위에 devcontainer.json (이줄 주석은 적지마세요.)
-
-
 {
   "name": "Nodejs Container",
   "build": {
@@ -9,7 +7,7 @@
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash"
   },
-  "extensions": [   
+  "extensions": [
     "ms-azuretools.vscode-docker"
   ],
   "forwardPorts": [
@@ -17,5 +15,6 @@
     3000,
     5173
   ],
-  "postCreateCommand": "echo 'Dev Container Ready!'"
+  "postCreateCommand": "echo 'Dev Container Ready!'",
+ 
 }
