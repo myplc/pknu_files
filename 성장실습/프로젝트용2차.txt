@@ -1,0 +1,19 @@
+[필수]: 
+Python , jupyter(인터프리터) -> py -> (데이터분석)
+    openapi -> 간단서버 ??? -> 판다스 -> json 
+
+Springboot -> 백앤드 -> RESTapi
+
+React -> 프론트앤드 -> SPA 
+웹사이트 만들기, 홈, 게시판, 꾸미기... 가입, 로그인(암호화),
+
+오라클, 깃허브 활용
+
+[선택사항]:  그외 기술들
+Chatbot , openAi 
+크롤링, OpenAPI, 셀레니움
+도커 - 컨테이너 - 개발
+Hadoop, Kafka, 등등
+
+
+

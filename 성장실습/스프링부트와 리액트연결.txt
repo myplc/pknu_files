@@ -1,9 +1,11 @@
-중계 ssh -> 개인 ssh  
+중계 ssh -> 개인 ssh 
+ 
 개인 컨테이너로 옮긴다. : jar + (dist)리액트빌드파일
 
 jar 백그라운드 실행
 nohup java -jar 파일이름 & 
 
+주의: 개인컨테이너 내에서 htop 로 kill할것
 백그라운드에 동작중인 jar 를
 종료하려면 htop(설치필요) 으로
 F3으로 서치하고 해당 java 를 찾아서
