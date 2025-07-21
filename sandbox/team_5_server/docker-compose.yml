@@ -1,0 +1,56 @@
+services:
+  pkuser01:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkteam1
+    hostname: TEAM1
+    image: pkteam:1.4
+    ports:
+      - "301:22"
+      - 8310-8319:8310-8319
+    restart: always
+    volumes:
+      - D:\dockerdata\pkteam\TEAM1:/home/pkteam/data
+  pkuser02:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkteam2
+    hostname: TEAM2
+    image: pkteam:1.4
+    ports:
+      - "302:22"
+      - 8320-8329:8320-8329
+    restart: always
+    volumes:
+      - D:\dockerdata\pkteam\TEAM2:/home/pkteam/data
+  pkuser03:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkteam3
+    hostname: TEAM3
+    image: pkteam:1.4
+    ports:
+      - "303:22"
+      - 8330-8339:8330-8339
+    restart: always
+    volumes:
+      - D:\dockerdata\pkteam\TEAM3:/home/pkteam/data
+  pkuser04:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkteam4
+    hostname: TEAM4
+    image: pkteam:1.4
+    ports:
+      - "304:22"
+      - 8340-8349:8340-8349
+    restart: always
+    volumes:
+      - D:\dockerdata\pkteam\TEAM4:/home/pkteam/data
+  pkuser05:
+    command: bash -c "service ssh start && tail -f /dev/null"
+    container_name: pkteam5
+    hostname: TEAM5
+    image: pkteam:1.4
+    ports:
+      - "305:22"
+      - 8350-8359:8350-8359
+    restart: always
+    volumes:
+      - D:\dockerdata\pkteam\TEAM5:/home/pkteam/data

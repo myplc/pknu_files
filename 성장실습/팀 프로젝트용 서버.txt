@@ -1,0 +1,14 @@
+팀 프로젝트용 서버를 새로 추가로 만들었습니다.
+신청할 때 프로젝트용으로 5개 더 받아놨는데 외부에서 접속가능 합니다.
+
+//중계ssh접속후//
+bjava.iptime.org/8892
+id: ys
+pw:1234
+
+// 각 팀의 컨테이너 //
+1조 : pkteam@localhost -p 301
+2조 : pkteam@localhost -p 302
+3조 : pkteam@localhost -p 303
+4조 : pkteam@localhost -p 304
+5조 : pkteam@localhost -p 305
