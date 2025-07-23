@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.1/dist/mobilenet.min.js"></script>
+</head>
+<body>
+    <h1>이미지 분류 with MobileNet</h1>    
+    <img id="img" src="./cccc.jpg" alt="">
+    <p id="predictions">인식중...</p>
+    <script>
+    const img = document.getElementById('img')
+    mobilenet.load().then(model=>{
+        model.classify(img).then(pred=>{
+            console.log(pred)
+            const pp = document.getElementById("predictions")
+            pp.innerHTML = `예측: ${pred[0].className} / 확률: ${(pred[0].probability*100).toFixed(2)} %`
+        })
+    })
+
+    </script>
+</body>
+</html>
