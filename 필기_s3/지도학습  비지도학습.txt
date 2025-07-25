@@ -15,6 +15,8 @@ X_train, Y_train , X_test , Y_test
 	DT -> Decision Tree (결정 나무) 과대적합 생김
 	RF -> Random Forest (랜덤 포레스트) 민주주의적 해결
 	ML 이미지 처리
+	
+
 	Tensorflow
 	-> 이미지 업로드 
 	-> 웹캠
